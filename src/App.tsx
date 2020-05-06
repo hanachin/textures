@@ -1,25 +1,37 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import styled from 'styled-components';
 
-function App() {
+const Border = styled.div`
+  border-radius: 4px;
+  box-shadow: rgba(0, 0, 0, .15) 0 0 2px;
+  background: 0 0 / auto 20px linear-gradient(#fe0000 10px, transparent 0);
+`;
+
+const AppRoot = styled.div`
+  box-sizing: border-box;
+  background: #f8f8f8;
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 48px);
+  grid-template-rows: repeat(auto-fill, 48px);
+  grid-gap: 4px;
+  padding: 4px;
+`;
+
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <AppRoot>
+      <Border/>
+      <Border/>
+      <Border/>
+      <Border/>
+      <Border/>
+      <Border/>
+      <Border/>
+      <Border/>
+      <Border/>
+      <Border/>
+    </AppRoot>
   );
 }
 
