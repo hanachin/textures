@@ -1,10 +1,15 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const Border = styled.div`
+const HorizontalBorder = styled.div`
   border-radius: 4px;
   box-shadow: rgba(0, 0, 0, .15) 0 0 2px;
   background: 0 0 / auto 20px linear-gradient(#fe0000 10px, transparent 0);
+`;
+const VerticalBorder = styled.div`
+  border-radius: 4px;
+  box-shadow: rgba(0, 0, 0, .15) 0 0 2px;
+  background: 0 0 / 20px auto linear-gradient(90deg, #fe0000 10px, transparent 0);
 `;
 
 const AppRoot = styled.div`
@@ -21,16 +26,8 @@ const AppRoot = styled.div`
 const App = () => {
   return (
     <AppRoot>
-      <Border/>
-      <Border/>
-      <Border/>
-      <Border/>
-      <Border/>
-      <Border/>
-      <Border/>
-      <Border/>
-      <Border/>
-      <Border/>
+      <HorizontalBorder/>
+      <VerticalBorder/>
     </AppRoot>
   );
 }
