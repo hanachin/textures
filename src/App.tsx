@@ -11,6 +11,16 @@ const VerticalBorder = styled.div`
   box-shadow: rgba(0, 0, 0, .15) 0 0 2px;
   background: 0 0 / 20px auto linear-gradient(90deg, #fe0000 10px, transparent 0);
 `;
+const RightDiagonalLine = styled.div`
+  border-radius: 4px;
+  box-shadow: rgba(0, 0, 0, .15) 0 0 2px;
+  background: repeating-linear-gradient(-45deg, #fe0000 0 10px, transparent 0 20px);
+`;
+const LeftDiagonalLine = styled.div`
+  border-radius: 4px;
+  box-shadow: rgba(0, 0, 0, .15) 0 0 2px;
+  background: repeating-linear-gradient(45deg, #fe0000 0 10px, transparent 0 20px);
+`;
 
 const AppRoot = styled.div`
   box-sizing: border-box;
@@ -28,6 +38,8 @@ const App = () => {
     <AppRoot>
       <HorizontalBorder/>
       <VerticalBorder/>
+      <RightDiagonalLine/>
+      <LeftDiagonalLine/>
     </AppRoot>
   );
 }
