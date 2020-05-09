@@ -4,12 +4,12 @@ import styled from 'styled-components';
 const HorizontalBorder = styled.div`
   border-radius: 4px;
   box-shadow: rgba(0, 0, 0, .15) 0 0 2px;
-  background: 0 0 / auto 20px linear-gradient(#fe0000 10px, transparent 0);
+  background: repeating-linear-gradient(#fe0000 0 10px, transparent 0 20px);
 `;
 const VerticalBorder = styled.div`
   border-radius: 4px;
   box-shadow: rgba(0, 0, 0, .15) 0 0 2px;
-  background: 0 0 / 20px auto linear-gradient(90deg, #fe0000 10px, transparent 0);
+  background: repeating-linear-gradient(90deg, #fe0000 0 10px, transparent 0 20px);
 `;
 const RightDiagonalLine = styled.div`
   border-radius: 4px;
