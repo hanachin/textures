@@ -21,13 +21,13 @@ const LeftDiagonalLine = styled.div`
   box-shadow: rgba(0, 0, 0, .15) 0 0 2px;
   background: repeating-linear-gradient(45deg, #fe0000 0 10px, transparent 0 20px);
 `;
-const Gingham = styled.div`
+const Check = styled.div`
   border-radius: 4px;
   box-shadow: rgba(0, 0, 0, .15) 0 0 2px;
   background: repeating-linear-gradient(#fe0000 0 2px, transparent 0 4px),
               repeating-linear-gradient(90deg, #fe0000 0 2px, transparent 0 4px);
 `;
-const DiagonalGingham = styled.div`
+const DiagonalCheck = styled.div`
   border-radius: 4px;
   box-shadow: rgba(0, 0, 0, .15) 0 0 2px;
   background: repeating-linear-gradient(-45deg, #fe0000 0 2px, transparent 0 4px),
@@ -69,8 +69,8 @@ const App = () => {
       <VerticalBorder/>
       <RightDiagonalLine/>
       <LeftDiagonalLine/>
-      <Gingham/>
-      <DiagonalGingham/>
+      <Check/>
+      <DiagonalCheck/>
       <Ichimatsu/>
       <Uroko/>
     </AppRoot>
