@@ -51,6 +51,244 @@ const Uroko = styled.div`
               ;
 `;
 
+const Diamond = styled.div`
+border-radius: 4px;
+box-shadow: rgba(0, 0, 0, .15) 0 0 2px;
+background: 0 0 / 8px 8px linear-gradient(45deg, #fe0000 0 3px, transparent 0),
+            0 0 / 8px 8px linear-gradient(-45deg, #fe0000 0 3px, transparent 0),
+            0 8px / 8px 8px linear-gradient(135deg, #fe0000 0 3px, transparent 0),
+            0 8px / 8px 8px linear-gradient(-135deg, #fe0000 0 3px, transparent 0);            ;
+`;
+const ArrowUp = styled.div`
+border-radius: 4px;
+box-shadow: rgba(0, 0, 0, .15) 0 0 2px;
+background: 0 0 / 9px 14px linear-gradient(45deg, #fe0000 0 3px, transparent 0),
+            0 0 / 9px 14px linear-gradient(-45deg, #fe0000 0 3px, transparent 0),
+            -4px 8px / 9px 14px linear-gradient(135deg, #fe0000 0 3px, transparent 0),
+            4px 8px / 9px 14px linear-gradient(-135deg, #fe0000 0 3px, transparent 0),
+            -4px 8px / 9px 14px linear-gradient(45deg, #fe0000 0 6px, transparent 0),
+            4px 0 / 9px 14px linear-gradient(-135deg, #fe0000 0 6px, transparent 0);
+`;
+const Arrow = styled.div`
+border-radius: 4px;
+box-shadow: rgba(0, 0, 0, .15) 0 0 2px;
+background: -1px 10px / 10px 10px linear-gradient(315deg, #fe0000 0 3px, transparent 0),
+            0px 10px / 10px 10px linear-gradient(45deg, #fe0000 0 3px, transparent 0),
+            4px 0 / 10px 10px linear-gradient(225deg, #fe0000 0 3px, transparent 0),
+            -5px 0 / 10px 10px linear-gradient(135deg, #fe0000 0 3px, transparent 0),
+
+            -1px 4px / 10px 10px linear-gradient(315deg, #fe0000 0 3px, transparent 0),
+            0px 4px / 10px 10px linear-gradient(45deg, #fe0000 0 3px, transparent 0),
+            4px 4px / 10px 10px linear-gradient(225deg, #fe0000 0 3px, transparent 0),
+            -5px 4px / 10px 10px linear-gradient(135deg, #fe0000 0 3px, transparent 0)
+`;
+const Arrow2 = styled.div`
+border-radius: 4px;
+box-shadow: rgba(0, 0, 0, .15) 0 0 2px;
+background: -1px 10px / 10px 20px linear-gradient(315deg, #000000 0 3px, transparent 0),
+            0px 10px / 10px 20px linear-gradient(45deg, #000000 0 3px, transparent 0),
+            4px 10px / 10px 20px linear-gradient(225deg, #000000 0 3px, transparent 0),
+            -5px 10px / 10px 20px linear-gradient(135deg, #000000 0 3px, transparent 0),
+
+            -1px 14px / 10px 20px linear-gradient(315deg, #000000 0 3px, transparent 0),
+            0px 14px / 10px 20px linear-gradient(45deg, #000000 0 3px, transparent 0),
+            4px 14px / 10px 20px linear-gradient(225deg, #000000 0 3px, transparent 0),
+            -5px 14px / 10px 20px linear-gradient(135deg, #000000 0 3px, transparent 0),
+
+            -1px 20px / 10px 20px linear-gradient(315deg, #fe0000 0 3px, transparent 0),
+            0px 20px / 10px 20px linear-gradient(45deg, #fe0000 0 3px, transparent 0),
+            4px 0 / 10px 20px linear-gradient(225deg, #fe0000 0 3px, transparent 0),
+            -5px 0 / 10px 20px linear-gradient(135deg, #fe0000 0 3px, transparent 0),
+
+            -1px 4px / 10px 20px linear-gradient(315deg, #fe0000 0 3px, transparent 0),
+            0px 4px / 10px 20px linear-gradient(45deg, #fe0000 0 3px, transparent 0),
+            4px 4px / 10px 20px linear-gradient(225deg, #fe0000 0 3px, transparent 0),
+            -5px 4px / 10px 20px linear-gradient(135deg, #fe0000 0 3px, transparent 0)
+`;
+const Arrow3 = styled.div`
+border-radius: 4px;
+box-shadow: rgba(0, 0, 0, .15) 0 0 2px;
+background: -11px 10px / 20px 20px linear-gradient(315deg, #fe0000 0 3px, transparent 0),
+            -10px 10px / 20px 20px linear-gradient(45deg, #fe0000 0 3px, transparent 0),
+            -6px 10px / 20px 20px linear-gradient(225deg, #fe0000 0 3px, transparent 0),
+            -15px 10px / 20px 20px linear-gradient(135deg, #fe0000 0 3px, transparent 0),
+
+            -11px 14px / 20px 20px linear-gradient(315deg, #fe0000 0 3px, transparent 0),
+            -10px 14px / 20px 20px linear-gradient(45deg, #fe0000 0 3px, transparent 0),
+            -6px 14px / 20px 20px linear-gradient(225deg, #fe0000 0 3px, transparent 0),
+            -15px 14px / 20px 20px linear-gradient(135deg, #fe0000 0 3px, transparent 0),
+
+            -11px 20px / 20px 20px linear-gradient(315deg, #000000 0 3px, transparent 0),
+            -10px 20px / 20px 20px linear-gradient(45deg, #000000 0 3px, transparent 0),
+            -6px 0 / 20px 20px linear-gradient(225deg, #000000 0 3px, transparent 0),
+            -15px 0 / 20px 20px linear-gradient(135deg, #000000 0 3px, transparent 0),
+
+            -11px 4px / 20px 20px linear-gradient(315deg, #000000 0 3px, transparent 0),
+            -10px 4px / 20px 20px linear-gradient(45deg, #000000 0 3px, transparent 0),
+            -6px 4px / 20px 20px linear-gradient(225deg, #000000 0 3px, transparent 0),
+            -15px 4px / 20px 20px linear-gradient(135deg, #000000 0 3px, transparent 0),
+
+            -1px 10px / 20px 20px linear-gradient(315deg, #000000 0 3px, transparent 0),
+            0px 10px / 20px 20px linear-gradient(45deg, #000000 0 3px, transparent 0),
+            4px 10px / 20px 20px linear-gradient(225deg, #000000 0 3px, transparent 0),
+            -5px 10px / 20px 20px linear-gradient(135deg, #000000 0 3px, transparent 0),
+
+            -1px 14px / 20px 20px linear-gradient(315deg, #000000 0 3px, transparent 0),
+            0px 14px / 20px 20px linear-gradient(45deg, #000000 0 3px, transparent 0),
+            4px 14px / 20px 20px linear-gradient(225deg, #000000 0 3px, transparent 0),
+            -5px 14px / 20px 20px linear-gradient(135deg, #000000 0 3px, transparent 0),
+
+            -1px 20px / 20px 20px linear-gradient(315deg, #fe0000 0 3px, transparent 0),
+            0px 20px / 20px 20px linear-gradient(45deg, #fe0000 0 3px, transparent 0),
+            4px 0 / 20px 20px linear-gradient(225deg, #fe0000 0 3px, transparent 0),
+            -5px 0 / 20px 20px linear-gradient(135deg, #fe0000 0 3px, transparent 0),
+
+            -1px 4px / 20px 20px linear-gradient(315deg, #fe0000 0 3px, transparent 0),
+            0px 4px / 20px 20px linear-gradient(45deg, #fe0000 0 3px, transparent 0),
+            4px 4px / 20px 20px linear-gradient(225deg, #fe0000 0 3px, transparent 0),
+            -5px 4px / 20px 20px linear-gradient(135deg, #fe0000 0 3px, transparent 0)
+`;
+const Arrow4 = styled.div`
+border-radius: 4px;
+box-shadow: rgba(0, 0, 0, .15) 0 0 2px;
+background: -11px 8px / 20px 16px linear-gradient(315deg, #fe0000 0 3px, transparent 0),
+            -10px 8px / 20px 16px linear-gradient(45deg, #fe0000 0 3px, transparent 0),
+            -6px 8px / 20px 16px linear-gradient(225deg, #fe0000 0 3px, transparent 0),
+            -15px 8px / 20px 16px linear-gradient(135deg, #fe0000 0 3px, transparent 0),
+
+            -11px 12px / 20px 16px linear-gradient(315deg, #fe0000 0 3px, transparent 0),
+            -10px 12px / 20px 16px linear-gradient(45deg, #fe0000 0 3px, transparent 0),
+            -6px 12px / 20px 16px linear-gradient(225deg, #fe0000 0 3px, transparent 0),
+            -15px 12px / 20px 16px linear-gradient(135deg, #fe0000 0 3px, transparent 0),
+
+            -11px 16px / 20px 16px linear-gradient(315deg, #000000 0 3px, transparent 0),
+            -10px 16px / 20px 16px linear-gradient(45deg, #000000 0 3px, transparent 0),
+            -6px 0 / 20px 16px linear-gradient(225deg, #000000 0 3px, transparent 0),
+            -15px 0 / 20px 16px linear-gradient(135deg, #000000 0 3px, transparent 0),
+
+            -11px 4px / 20px 16px linear-gradient(315deg, #000000 0 3px, transparent 0),
+            -10px 4px / 20px 16px linear-gradient(45deg, #000000 0 3px, transparent 0),
+            -6px 4px / 20px 16px linear-gradient(225deg, #000000 0 3px, transparent 0),
+            -15px 4px / 20px 16px linear-gradient(135deg, #000000 0 3px, transparent 0),
+
+            -1px 8px / 20px 16px linear-gradient(315deg, #000000 0 3px, transparent 0),
+            0px 8px / 20px 16px linear-gradient(45deg, #000000 0 3px, transparent 0),
+            4px 8px / 20px 16px linear-gradient(225deg, #000000 0 3px, transparent 0),
+            -5px 8px / 20px 16px linear-gradient(135deg, #000000 0 3px, transparent 0),
+
+            -1px 12px / 20px 16px linear-gradient(315deg, #000000 0 3px, transparent 0),
+            0px 12px / 20px 16px linear-gradient(45deg, #000000 0 3px, transparent 0),
+            4px 12px / 20px 16px linear-gradient(225deg, #000000 0 3px, transparent 0),
+            -5px 12px / 20px 16px linear-gradient(135deg, #000000 0 3px, transparent 0),
+
+            -1px 16px / 20px 16px linear-gradient(315deg, #fe0000 0 3px, transparent 0),
+            0px 16px / 20px 16px linear-gradient(45deg, #fe0000 0 3px, transparent 0),
+            4px 0 / 20px 16px linear-gradient(225deg, #fe0000 0 3px, transparent 0),
+            -5px 0 / 20px 16px linear-gradient(135deg, #fe0000 0 3px, transparent 0),
+
+            -1px 4px / 20px 16px linear-gradient(315deg, #fe0000 0 3px, transparent 0),
+            0px 4px / 20px 16px linear-gradient(45deg, #fe0000 0 3px, transparent 0),
+            4px 4px / 20px 16px linear-gradient(225deg, #fe0000 0 3px, transparent 0),
+            -5px 4px / 20px 16px linear-gradient(135deg, #fe0000 0 3px, transparent 0)
+;
+`;
+const Arrow5 = styled.div`
+border-radius: 4px;
+box-shadow: rgba(0, 0, 0, .15) 0 0 2px;
+background: -12px 8px / 18px 16px linear-gradient(315deg, #fe0000 0 3px, transparent 0),
+            -11px 8px / 18px 16px linear-gradient(45deg, #fe0000 0 3px, transparent 0),
+            -7px 8px / 18px 16px linear-gradient(225deg, #fe0000 0 3px, transparent 0),
+            -16px 8px / 18px 16px linear-gradient(135deg, #fe0000 0 3px, transparent 0),
+
+            -12px 12px / 18px 16px linear-gradient(315deg, #fe0000 0 3px, transparent 0),
+            -11px 12px / 18px 16px linear-gradient(45deg, #fe0000 0 3px, transparent 0),
+            -7px 12px / 18px 16px linear-gradient(225deg, #fe0000 0 3px, transparent 0),
+            -16px 12px / 18px 16px linear-gradient(135deg, #fe0000 0 3px, transparent 0),
+
+            -12px 16px / 18px 16px linear-gradient(315deg, #000000 0 3px, transparent 0),
+            -11px 16px / 18px 16px linear-gradient(45deg, #000000 0 3px, transparent 0),
+            -7px 0 / 18px 16px linear-gradient(225deg, #000000 0 3px, transparent 0),
+            -16px 0 / 18px 16px linear-gradient(135deg, #000000 0 3px, transparent 0),
+
+            -12px 4px / 18px 16px linear-gradient(315deg, #000000 0 3px, transparent 0),
+            -11px 4px / 18px 16px linear-gradient(45deg, #000000 0 3px, transparent 0),
+            -7px 4px / 18px 16px linear-gradient(225deg, #000000 0 3px, transparent 0),
+            -16px 4px / 18px 16px linear-gradient(135deg, #000000 0 3px, transparent 0),
+
+            -3px 8px / 18px 16px linear-gradient(315deg, #000000 0 3px, transparent 0),
+            -2px 8px / 18px 16px linear-gradient(45deg, #000000 0 3px, transparent 0),
+            2px 8px / 18px 16px linear-gradient(225deg, #000000 0 3px, transparent 0),
+            -7px 8px / 18px 16px linear-gradient(135deg, #000000 0 3px, transparent 0),
+
+            -3px 12px / 18px 16px linear-gradient(315deg, #000000 0 3px, transparent 0),
+            -2px 12px / 18px 16px linear-gradient(45deg, #000000 0 3px, transparent 0),
+            2px 12px / 18px 16px linear-gradient(225deg, #000000 0 3px, transparent 0),
+            -7px 12px / 18px 16px linear-gradient(135deg, #000000 0 3px, transparent 0),
+
+            -3px 16px / 18px 16px linear-gradient(315deg, #fe0000 0 3px, transparent 0),
+            -2px 16px / 18px 16px linear-gradient(45deg, #fe0000 0 3px, transparent 0),
+            2px 0 / 18px 16px linear-gradient(225deg, #fe0000 0 3px, transparent 0),
+            -7px 0 / 18px 16px linear-gradient(135deg, #fe0000 0 3px, transparent 0),
+
+            -3px 4px / 18px 16px linear-gradient(315deg, #fe0000 0 3px, transparent 0),
+            -2px 4px / 18px 16px linear-gradient(45deg, #fe0000 0 3px, transparent 0),
+            2px 4px / 18px 16px linear-gradient(225deg, #fe0000 0 3px, transparent 0),
+            -7px 4px / 18px 16px linear-gradient(135deg, #fe0000 0 3px, transparent 0);
+`;
+const Yagasuri = styled.div`
+border-radius: 4px;
+box-shadow: rgba(0, 0, 0, .15) 0 0 2px;
+background: -12px 8px / 18px 16px linear-gradient(315deg, #fe0000 0 3px, transparent 0),
+            -11px 8px / 18px 16px linear-gradient(45deg, #fe0000 0 3px, transparent 0),
+            -7px 8px / 18px 16px linear-gradient(225deg, #fe0000 0 3px, transparent 0),
+            -16px 8px / 18px 16px linear-gradient(135deg, #fe0000 0 3px, transparent 0),
+
+            -12px 12px / 18px 16px linear-gradient(315deg, #fe0000 0 3px, transparent 0),
+            -11px 12px / 18px 16px linear-gradient(45deg, #fe0000 0 3px, transparent 0),
+            -7px 12px / 18px 16px linear-gradient(225deg, #fe0000 0 3px, transparent 0),
+            -16px 12px / 18px 16px linear-gradient(135deg, #fe0000 0 3px, transparent 0),
+
+            -12px 16px / 18px 16px linear-gradient(315deg, #ffffff 0 3px, transparent 0),
+            -11px 16px / 18px 16px linear-gradient(45deg, #ffffff 0 3px, transparent 0),
+            -7px 0 / 18px 16px linear-gradient(225deg, #ffffff 0 3px, transparent 0),
+            -16px 0 / 18px 16px linear-gradient(135deg, #ffffff 0 3px, transparent 0),
+
+            -12px 4px / 18px 16px linear-gradient(315deg, #ffffff 0 3px, transparent 0),
+            -11px 4px / 18px 16px linear-gradient(45deg, #ffffff 0 3px, transparent 0),
+            -7px 4px / 18px 16px linear-gradient(225deg, #ffffff 0 3px, transparent 0),
+            -16px 4px / 18px 16px linear-gradient(135deg, #ffffff 0 3px, transparent 0),
+
+            -3px 8px / 18px 16px linear-gradient(315deg, #ffffff 0 3px, transparent 0),
+            -2px 8px / 18px 16px linear-gradient(45deg, #ffffff 0 3px, transparent 0),
+            2px 8px / 18px 16px linear-gradient(225deg, #ffffff 0 3px, transparent 0),
+            -7px 8px / 18px 16px linear-gradient(135deg, #ffffff 0 3px, transparent 0),
+
+            -3px 12px / 18px 16px linear-gradient(315deg, #ffffff 0 3px, transparent 0),
+            -2px 12px / 18px 16px linear-gradient(45deg, #ffffff 0 3px, transparent 0),
+            2px 12px / 18px 16px linear-gradient(225deg, #ffffff 0 3px, transparent 0),
+            -7px 12px / 18px 16px linear-gradient(135deg, #ffffff 0 3px, transparent 0),
+
+            -3px 16px / 18px 16px linear-gradient(315deg, #fe0000 0 3px, transparent 0),
+            -2px 16px / 18px 16px linear-gradient(45deg, #fe0000 0 3px, transparent 0),
+            2px 0 / 18px 16px linear-gradient(225deg, #fe0000 0 3px, transparent 0),
+            -7px 0 / 18px 16px linear-gradient(135deg, #fe0000 0 3px, transparent 0),
+
+            -3px 4px / 18px 16px linear-gradient(315deg, #fe0000 0 3px, transparent 0),
+            -2px 4px / 18px 16px linear-gradient(45deg, #fe0000 0 3px, transparent 0),
+            2px 4px / 18px 16px linear-gradient(225deg, #fe0000 0 3px, transparent 0),
+            -7px 4px / 18px 16px linear-gradient(135deg, #fe0000 0 3px, transparent 0),
+
+            9px 4px / 18px 16px linear-gradient(45deg, #ffffff 0 25%, transparent 0),
+            0px 12px / 18px 16px linear-gradient(45deg, transparent 0 75%, #ffffff 0),
+            9px 4px / 18px 16px linear-gradient(-45deg, #fe0000 0 25%, transparent 0),
+            0px 12px / 18px 16px linear-gradient(-45deg, transparent 0 75%, #fe0000 0),
+
+            9px 12px / 18px 16px linear-gradient(45deg, #fe0000 0 25%, transparent 0),
+            0px 20px / 18px 16px linear-gradient(45deg, transparent 0 75%, #fe0000 0),
+            9px 12px / 18px 16px linear-gradient(-45deg, #ffffff 0 25%, transparent 0),
+            0px 20px / 18px 16px linear-gradient(-45deg, transparent 0 75%, #ffffff 0);
+`;
+
 const AppRoot = styled.div`
   box-sizing: border-box;
   background: #f8f8f8;
@@ -73,6 +311,14 @@ const App = () => {
       <DiagonalCheck/>
       <Ichimatsu/>
       <Uroko/>
+      <Diamond/>
+      <ArrowUp/>
+      <Arrow/>
+      <Arrow2/>
+      <Arrow3/>
+      <Arrow4/>
+      <Arrow5/>
+      <Yagasuri/>
     </AppRoot>
   );
 }
