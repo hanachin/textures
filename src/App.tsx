@@ -319,6 +319,111 @@ const Yagasuri = styled(Example)`
               calc(var(--box-width) / 2) calc(var(--arrow-height) + var(--arrow-block-size)) / var(--box-width) var(--box-height) linear-gradient(-45deg, var(--secondary-color) 0 25%, transparent 0),
               0 calc(var(--box-height) + var(--arrow-block-size)) / var(--box-width) var(--box-height) linear-gradient(-45deg, transparent 0 75%, var(--secondary-color) 0);
 `;
+const Japan = styled(Example)`
+  --circle-size: 64px;
+  background: radial-gradient(
+                var(--primary-color) 0px,
+                var(--primary-color) var(--circle-size),
+                transparent var(--circle-size),
+                transparent
+              ),
+              var(--secondary-color);
+`;
+const Circle = styled(Example)`
+  --circle-size: 64px;
+  background: radial-gradient(
+                transparent calc(var(--circle-size) - var(--width-primary)),
+                var(--primary-color) calc(var(--circle-size) - var(--width-primary)),
+                var(--primary-color) var(--circle-size),
+                transparent var(--circle-size),
+                transparent
+              ),
+              var(--secondary-color);
+`;
+const Circles = styled(Example)`
+  --circle-size: 24px;
+  --circle-distance: 24px;
+  background: repeating-radial-gradient(
+                circle calc(var(--circle-size) + var(--circle-distance)),
+                transparent calc(var(--circle-size) - var(--width-primary)),
+                var(--primary-color) calc(var(--circle-size) - var(--width-primary)),
+                var(--primary-color) var(--circle-size),
+                transparent var(--circle-size),
+                transparent
+              ),
+              var(--secondary-color);
+`;
+const Baumkuchen = styled(Example)`
+  --circle-size: 24px;
+  --circle-distance: 1px;
+  background: repeating-radial-gradient(
+                circle calc(var(--circle-size) + var(--circle-distance)),
+                transparent calc(var(--circle-size) - var(--width-primary)),
+                var(--primary-color) calc(var(--circle-size) - var(--width-primary)),
+                var(--primary-color) var(--circle-size),
+                transparent var(--circle-size),
+                transparent
+              ),
+              var(--secondary-color);
+`;
+const PolkaDot = styled(Example)`
+  --circle-size: 24px;
+  --circle-distance: 48px;
+  background: 0 0 / var(--circle-distance) var(--circle-distance) radial-gradient(
+                var(--primary-color) 0,
+                var(--primary-color) var(--circle-size),
+                transparent var(--circle-size),
+                transparent
+              ),
+              var(--secondary-color);
+`;
+const Shippou = styled(Example)`
+  --circle-size: 24px;
+  --circle-width: 2px;
+  --circle-distance: 48px;
+  background: 0 0 / var(--circle-distance) var(--circle-distance) radial-gradient(
+                transparent 0,
+                transparent calc(var(--circle-size) - var(--circle-width)),
+                var(--primary-color) 0,
+                var(--primary-color) var(--circle-size),
+                transparent var(--circle-size),
+                transparent
+              ),
+              var(--circle-size) var(--circle-size) / var(--circle-distance) var(--circle-distance) radial-gradient(
+                transparent 0,
+                transparent calc(var(--circle-size) - var(--circle-width)),
+                var(--primary-color) 0,
+                var(--primary-color) var(--circle-size),
+                transparent var(--circle-size),
+                transparent
+              ),
+              var(--secondary-color);
+`;
+const Shippou2 = styled(Example)`
+  --circle-size: 24px;
+  --circle-width: 2px;
+  --circle-distance: 48px;
+  --fill-color: #ff000066;
+  --blend-mode: overlay;
+  mix-blend-mode: var(--blend-mode);
+  background: 0 0 / var(--circle-distance) var(--circle-distance) radial-gradient(
+                var(--fill-color) 0,
+                var(--fill-color) calc(var(--circle-size) - var(--circle-width)),
+                var(--primary-color) 0,
+                var(--primary-color) var(--circle-size),
+                transparent var(--circle-size),
+                transparent
+              ),
+              var(--circle-size) var(--circle-size) / var(--circle-distance) var(--circle-distance) radial-gradient(
+                var(--fill-color) 0,
+                var(--fill-color) calc(var(--circle-size) - var(--circle-width)),
+                var(--primary-color) 0,
+                var(--primary-color) var(--circle-size),
+                transparent var(--circle-size),
+                transparent
+              )
+              var(--secondary-color);
+`;
 
 const AppRoot = styled.div`
   box-sizing: border-box;
@@ -350,6 +455,13 @@ const App = () => {
       <Arrow4/>
       <Arrow5/>
       <Yagasuri/>
+      <Japan/>
+      <Circle/>
+      <Circles/>
+      <Baumkuchen/>
+      <PolkaDot/>
+      <Shippou/>
+      <Shippou2/>
     </AppRoot>
   );
 }
