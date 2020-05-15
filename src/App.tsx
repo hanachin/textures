@@ -425,6 +425,20 @@ const Shippou2 = styled(Example)`
               var(--secondary-color);
 `;
 
+const BaseFooter = styled.footer`
+  position: absolute;
+  bottom: 0;
+  right: 0;
+`;
+
+const Footer: React.FC<{}> = () => {
+  return (
+    <BaseFooter>
+      <a href="https://github.com/hanachin/textures">Source Code</a>
+    </BaseFooter>
+  )
+}
+
 const AppRoot = styled.div`
   box-sizing: border-box;
   background: #dcdddd;
@@ -462,6 +476,7 @@ const App = () => {
       <PolkaDot/>
       <Shippou/>
       <Shippou2/>
+      <Footer/>
     </AppRoot>
   );
 }
