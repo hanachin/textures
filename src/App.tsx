@@ -78,6 +78,21 @@ const ArrowUp = styled(Example)`
               var(--arrow-width)      0                                 / var(--box-width) var(--box-height) linear-gradient(-135deg, var(--primary-color) 0 calc(var(--arrow-block-size) * var(--sqrt2)), transparent 0),
               var(--secondary-color);
 `;
+const ArrowDown = styled(Example)`
+  --sqrt2:        1.5;
+  --arrow-height: calc(3 * var(--arrow-block-size));
+  --arrow-width:  calc(2 * var(--arrow-block-size));
+  --box-height:   calc(var(--arrow-height) + 2 * var(--arrow-space));
+  --box-width:    calc(var(--arrow-width) + var(--arrow-space));
+
+  background: 0                       0                                 / var(--box-width) var(--box-height) linear-gradient(45deg,   var(--primary-color) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
+              var(--arrow-width)      0                                 / var(--box-width) var(--box-height) linear-gradient(-45deg,  var(--primary-color) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
+              var(--arrow-block-size) calc(2 * var(--arrow-block-size)) / var(--box-width) var(--box-height) linear-gradient(135deg,  var(--primary-color) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
+              var(--arrow-block-size) calc(2 * var(--arrow-block-size)) / var(--box-width) var(--box-height) linear-gradient(-135deg, var(--primary-color) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
+              0                       calc(2 * var(--arrow-block-size)) / var(--box-width) var(--box-height) linear-gradient(45deg,   var(--primary-color) 0 calc(var(--arrow-block-size) * var(--sqrt2)), transparent 0),
+              var(--arrow-width)      0                                 / var(--box-width) var(--box-height) linear-gradient(-135deg, var(--primary-color) 0 calc(var(--arrow-block-size) * var(--sqrt2)), transparent 0),
+              var(--secondary-color);
+`;
 const Arrow = styled(Example)`
   --sqrt2:        1.5;
   --arrow-height: calc(2 * var(--arrow-block-size));
@@ -126,46 +141,108 @@ const Arrow3 = styled(Example)`
   --arrow-width:  calc(2 * var(--arrow-block-size));
   --box-height:   calc(2 * var(--arrow-height) + 4 * var(--arrow-space));
   --box-width:    calc(2 * var(--arrow-width) + 4 * var(--arrow-space));
+  --color1: var(--secondary-color);
+  --color2: var(--secondary-color);
+  --color3: var(--primary-color);
+  --color4: var(--primary-color);
+  --color5: var(--primary-color);
+  --color6: var(--primary-color);
+  --color7: var(--secondary-color);
+  --color8: var(--secondary-color);
+  background: calc(var(--box-width) / 4 + var(--arrow-block-size)) calc(var(--box-height) / 2) / var(--box-width) var(--box-height) linear-gradient(-45deg, var(--color2) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
+              calc(var(--box-width) / 2) calc(var(--box-height) / 2) / var(--box-width) var(--box-height) linear-gradient(45deg, var(--color3) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
+              calc(var(--box-width) / 2 + var(--arrow-block-size)) calc(var(--box-height) / 2) / var(--box-width) var(--box-height) linear-gradient(-135deg, var(--color3) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
+              calc(var(--box-width) / 4) calc(var(--box-height) / 2) / var(--box-width) var(--box-height) linear-gradient(135deg, var(--color2) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
 
-  background: calc(var(--box-width) / 4 + var(--arrow-block-size)) calc(var(--box-height) / 2) / var(--box-width) var(--box-height) linear-gradient(-45deg, var(--primary-color) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
-              calc(var(--box-width) / 2) calc(var(--box-height) / 2) / var(--box-width) var(--box-height) linear-gradient(45deg, var(--primary-color) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
-              calc(var(--box-width) / 2 + var(--arrow-block-size)) calc(var(--box-height) / 2) / var(--box-width) var(--box-height) linear-gradient(-135deg, var(--primary-color) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
-              calc(var(--box-width) / 4) calc(var(--box-height) / 2) / var(--box-width) var(--box-height) linear-gradient(135deg, var(--primary-color) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
+              calc(var(--box-width) / 4 + var(--arrow-block-size)) calc(var(--box-height) / 2 + var(--arrow-block-size)) / var(--box-width) var(--box-height) linear-gradient(-45deg, var(--color2) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
+              calc(var(--box-width) / 2) calc(var(--box-height) / 2 + var(--arrow-block-size)) / var(--box-width) var(--box-height) linear-gradient(45deg, var(--color3) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
+              calc(var(--box-width) / 2 + var(--arrow-block-size)) calc(var(--box-height) / 2 + var(--arrow-block-size)) / var(--box-width) var(--box-height) linear-gradient(-135deg, var(--color3) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
+              calc(var(--box-width) / 4) calc(var(--box-height) / 2 + var(--arrow-block-size)) / var(--box-width) var(--box-height) linear-gradient(135deg, var(--color2) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
 
-              calc(var(--box-width) / 4 + var(--arrow-block-size)) calc(var(--box-height) / 2 + var(--arrow-block-size)) / var(--box-width) var(--box-height) linear-gradient(-45deg, var(--primary-color) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
-              calc(var(--box-width) / 2) calc(var(--box-height) / 2 + var(--arrow-block-size)) / var(--box-width) var(--box-height) linear-gradient(45deg, var(--primary-color) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
-              calc(var(--box-width) / 2 + var(--arrow-block-size)) calc(var(--box-height) / 2 + var(--arrow-block-size)) / var(--box-width) var(--box-height) linear-gradient(-135deg, var(--primary-color) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
-              calc(var(--box-width) / 4) calc(var(--box-height) / 2 + var(--arrow-block-size)) / var(--box-width) var(--box-height) linear-gradient(135deg, var(--primary-color) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
+              calc(var(--box-width) / 4 + var(--arrow-block-size)) var(--box-height) / var(--box-width) var(--box-height) linear-gradient(-45deg, var(--color6) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
+              calc(var(--box-width) / 2) var(--box-height) / var(--box-width) var(--box-height) linear-gradient(45deg, var(--color7) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
+              calc(var(--box-width) / 2 + var(--arrow-block-size)) 0 / var(--box-width) var(--box-height) linear-gradient(-135deg, var(--color7) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
+              calc(var(--box-width) / 4) 0 / var(--box-width) var(--box-height) linear-gradient(135deg, var(--color6) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
 
-              calc(var(--box-width) / 4 + var(--arrow-block-size)) var(--box-height) / var(--box-width) var(--box-height) linear-gradient(-45deg, var(--secondary-color) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
-              calc(var(--box-width) / 2) var(--box-height) / var(--box-width) var(--box-height) linear-gradient(45deg, var(--secondary-color) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
-              calc(var(--box-width) / 2 + var(--arrow-block-size)) 0 / var(--box-width) var(--box-height) linear-gradient(-135deg, var(--secondary-color) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
-              calc(var(--box-width) / 4) 0 / var(--box-width) var(--box-height) linear-gradient(135deg, var(--secondary-color) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
+              calc(var(--box-width) / 4 + var(--arrow-block-size)) var(--arrow-block-size) / var(--box-width) var(--box-height) linear-gradient(-45deg, var(--color6) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
+              calc(var(--box-width) / 2) var(--arrow-block-size) / var(--box-width) var(--box-height) linear-gradient(45deg, var(--color7) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
+              calc(var(--box-width) / 2 + var(--arrow-block-size)) var(--arrow-block-size) / var(--box-width) var(--box-height) linear-gradient(-135deg, var(--color7) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
+              calc(var(--box-width) / 4) var(--arrow-block-size) / var(--box-width) var(--box-height) linear-gradient(135deg, var(--color6) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
 
-              calc(var(--box-width) / 4 + var(--arrow-block-size)) var(--arrow-block-size) / var(--box-width) var(--box-height) linear-gradient(-45deg, var(--secondary-color) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
-              calc(var(--box-width) / 2) var(--arrow-block-size) / var(--box-width) var(--box-height) linear-gradient(45deg, var(--secondary-color) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
-              calc(var(--box-width) / 2 + var(--arrow-block-size)) var(--arrow-block-size) / var(--box-width) var(--box-height) linear-gradient(-135deg, var(--secondary-color) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
-              calc(var(--box-width) / 4) var(--arrow-block-size) / var(--box-width) var(--box-height) linear-gradient(135deg, var(--secondary-color) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
+              calc(var(--box-width) / 4 * 3 + var(--arrow-block-size)) calc(var(--box-height) / 2) / var(--box-width) var(--box-height) linear-gradient(-45deg, var(--color4) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
+              0 calc(var(--box-height) / 2) / var(--box-width) var(--box-height) linear-gradient(45deg, var(--color1) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
+              var(--arrow-block-size) calc(var(--box-height) / 2) / var(--box-width) var(--box-height) linear-gradient(-135deg, var(--color1) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
+              calc(var(--box-height) / 4 * 3) calc(var(--box-height) / 2) / var(--box-width) var(--box-height) linear-gradient(135deg, var(--color4) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
 
-              calc(var(--box-width) / 4 * 3 + var(--arrow-block-size)) calc(var(--box-height) / 2) / var(--box-width) var(--box-height) linear-gradient(-45deg, var(--secondary-color) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
-              0 calc(var(--box-height) / 2) / var(--box-width) var(--box-height) linear-gradient(45deg, var(--secondary-color) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
-              var(--arrow-block-size) calc(var(--box-height) / 2) / var(--box-width) var(--box-height) linear-gradient(-135deg, var(--secondary-color) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
-              calc(var(--box-height) / 4 * 3) calc(var(--box-height) / 2) / var(--box-width) var(--box-height) linear-gradient(135deg, var(--secondary-color) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
+              calc(var(--box-width) / 4 * 3 + var(--arrow-block-size)) calc(var(--box-height) / 2 + var(--arrow-block-size)) / var(--box-width) var(--box-height) linear-gradient(-45deg, var(--color4) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
+              0 calc(var(--box-height) / 2 + var(--arrow-block-size)) / var(--box-width) var(--box-height) linear-gradient(45deg, var(--color1) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
+              var(--arrow-block-size) calc(var(--box-height) / 2 + var(--arrow-block-size)) / var(--box-width) var(--box-height) linear-gradient(-135deg, var(--color1) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
+              calc(var(--box-height) / 4 * 3) calc(var(--box-height) / 2 + var(--arrow-block-size)) / var(--box-width) var(--box-height) linear-gradient(135deg, var(--color4) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
 
-              calc(var(--box-width) / 4 * 3 + var(--arrow-block-size)) calc(var(--box-height) / 2 + var(--arrow-block-size)) / var(--box-width) var(--box-height) linear-gradient(-45deg, var(--secondary-color) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
-              0 calc(var(--box-height) / 2 + var(--arrow-block-size)) / var(--box-width) var(--box-height) linear-gradient(45deg, var(--secondary-color) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
-              var(--arrow-block-size) calc(var(--box-height) / 2 + var(--arrow-block-size)) / var(--box-width) var(--box-height) linear-gradient(-135deg, var(--secondary-color) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
-              calc(var(--box-height) / 4 * 3) calc(var(--box-height) / 2 + var(--arrow-block-size)) / var(--box-width) var(--box-height) linear-gradient(135deg, var(--secondary-color) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
+              calc(var(--box-width) / 4 * 3 + var(--arrow-block-size)) var(--box-height) / var(--box-width) var(--box-height) linear-gradient(-45deg, var(--color8) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
+              0 var(--box-height) / var(--box-width) var(--box-height) linear-gradient(45deg, var(--color5) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
+              var(--arrow-block-size) 0 / var(--box-width) var(--box-height) linear-gradient(-135deg, var(--color5) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
+              calc(var(--box-height) / 4 * 3) 0 / var(--box-width) var(--box-height) linear-gradient(135deg, var(--color8) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
 
-              calc(var(--box-width) / 4 * 3 + var(--arrow-block-size)) var(--box-height) / var(--box-width) var(--box-height) linear-gradient(-45deg, var(--primary-color) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
-              0 var(--box-height) / var(--box-width) var(--box-height) linear-gradient(45deg, var(--primary-color) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
-              var(--arrow-block-size) 0 / var(--box-width) var(--box-height) linear-gradient(-135deg, var(--primary-color) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
-              calc(var(--box-height) / 4 * 3) 0 / var(--box-width) var(--box-height) linear-gradient(135deg, var(--primary-color) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
+              calc(var(--box-width) / 4 * 3 + var(--arrow-block-size)) var(--arrow-block-size) / var(--box-width) var(--box-height) linear-gradient(-45deg, var(--color8) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
+              0 var(--arrow-block-size) / var(--box-width) var(--box-height) linear-gradient(45deg, var(--color5) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
+              var(--arrow-block-size) var(--arrow-block-size) / var(--box-width) var(--box-height) linear-gradient(-135deg, var(--color5) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
+              calc(var(--box-height) / 4 * 3) var(--arrow-block-size) / var(--box-width) var(--box-height) linear-gradient(135deg, var(--color8) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
+              var(--accent-color);
+`;
+const Arrow3Rev = styled(Example)`
+  --sqrt2:        1.5;
+  --arrow-height: calc(2 * var(--arrow-block-size));
+  --arrow-width:  calc(2 * var(--arrow-block-size));
+  --box-height:   calc(2 * var(--arrow-height) + 4 * var(--arrow-space));
+  --box-width:    calc(2 * var(--arrow-width) + 4 * var(--arrow-space));
+  --color1: var(--secondary-color);
+  --color2: var(--primary-color);
+  --color3: var(--primary-color);
+  --color4: var(--secondary-color);
+  --color5: var(--primary-color);
+  --color6: var(--secondary-color);
+  --color7: var(--secondary-color);
+  --color8: var(--primary-color);
+  background: calc(var(--box-width) / 4 + var(--arrow-block-size)) calc(var(--box-height) / 2) / var(--box-width) var(--box-height) linear-gradient(-45deg, var(--color2) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
+              calc(var(--box-width) / 2) calc(var(--box-height) / 2) / var(--box-width) var(--box-height) linear-gradient(45deg, var(--color3) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
+              calc(var(--box-width) / 2 + var(--arrow-block-size)) calc(var(--box-height) / 2) / var(--box-width) var(--box-height) linear-gradient(-135deg, var(--color3) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
+              calc(var(--box-width) / 4) calc(var(--box-height) / 2) / var(--box-width) var(--box-height) linear-gradient(135deg, var(--color2) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
 
-              calc(var(--box-width) / 4 * 3 + var(--arrow-block-size)) var(--arrow-block-size) / var(--box-width) var(--box-height) linear-gradient(-45deg, var(--primary-color) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
-              0 var(--arrow-block-size) / var(--box-width) var(--box-height) linear-gradient(45deg, var(--primary-color) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
-              var(--arrow-block-size) var(--arrow-block-size) / var(--box-width) var(--box-height) linear-gradient(-135deg, var(--primary-color) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
-              calc(var(--box-height) / 4 * 3) var(--arrow-block-size) / var(--box-width) var(--box-height) linear-gradient(135deg, var(--primary-color) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
+              calc(var(--box-width) / 4 + var(--arrow-block-size)) calc(var(--box-height) / 2 + var(--arrow-block-size)) / var(--box-width) var(--box-height) linear-gradient(-45deg, var(--color2) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
+              calc(var(--box-width) / 2) calc(var(--box-height) / 2 + var(--arrow-block-size)) / var(--box-width) var(--box-height) linear-gradient(45deg, var(--color3) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
+              calc(var(--box-width) / 2 + var(--arrow-block-size)) calc(var(--box-height) / 2 + var(--arrow-block-size)) / var(--box-width) var(--box-height) linear-gradient(-135deg, var(--color3) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
+              calc(var(--box-width) / 4) calc(var(--box-height) / 2 + var(--arrow-block-size)) / var(--box-width) var(--box-height) linear-gradient(135deg, var(--color2) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
+
+              calc(var(--box-width) / 4 + var(--arrow-block-size)) var(--box-height) / var(--box-width) var(--box-height) linear-gradient(-45deg, var(--color6) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
+              calc(var(--box-width) / 2) var(--box-height) / var(--box-width) var(--box-height) linear-gradient(45deg, var(--color7) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
+              calc(var(--box-width) / 2 + var(--arrow-block-size)) 0 / var(--box-width) var(--box-height) linear-gradient(-135deg, var(--color7) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
+              calc(var(--box-width) / 4) 0 / var(--box-width) var(--box-height) linear-gradient(135deg, var(--color6) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
+
+              calc(var(--box-width) / 4 + var(--arrow-block-size)) var(--arrow-block-size) / var(--box-width) var(--box-height) linear-gradient(-45deg, var(--color6) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
+              calc(var(--box-width) / 2) var(--arrow-block-size) / var(--box-width) var(--box-height) linear-gradient(45deg, var(--color7) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
+              calc(var(--box-width) / 2 + var(--arrow-block-size)) var(--arrow-block-size) / var(--box-width) var(--box-height) linear-gradient(-135deg, var(--color7) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
+              calc(var(--box-width) / 4) var(--arrow-block-size) / var(--box-width) var(--box-height) linear-gradient(135deg, var(--color6) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
+
+              calc(var(--box-width) / 4 * 3 + var(--arrow-block-size)) calc(var(--box-height) / 2) / var(--box-width) var(--box-height) linear-gradient(-45deg, var(--color4) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
+              0 calc(var(--box-height) / 2) / var(--box-width) var(--box-height) linear-gradient(45deg, var(--color1) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
+              var(--arrow-block-size) calc(var(--box-height) / 2) / var(--box-width) var(--box-height) linear-gradient(-135deg, var(--color1) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
+              calc(var(--box-height) / 4 * 3) calc(var(--box-height) / 2) / var(--box-width) var(--box-height) linear-gradient(135deg, var(--color4) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
+
+              calc(var(--box-width) / 4 * 3 + var(--arrow-block-size)) calc(var(--box-height) / 2 + var(--arrow-block-size)) / var(--box-width) var(--box-height) linear-gradient(-45deg, var(--color4) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
+              0 calc(var(--box-height) / 2 + var(--arrow-block-size)) / var(--box-width) var(--box-height) linear-gradient(45deg, var(--color1) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
+              var(--arrow-block-size) calc(var(--box-height) / 2 + var(--arrow-block-size)) / var(--box-width) var(--box-height) linear-gradient(-135deg, var(--color1) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
+              calc(var(--box-height) / 4 * 3) calc(var(--box-height) / 2 + var(--arrow-block-size)) / var(--box-width) var(--box-height) linear-gradient(135deg, var(--color4) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
+
+              calc(var(--box-width) / 4 * 3 + var(--arrow-block-size)) var(--box-height) / var(--box-width) var(--box-height) linear-gradient(-45deg, var(--color8) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
+              0 var(--box-height) / var(--box-width) var(--box-height) linear-gradient(45deg, var(--color5) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
+              var(--arrow-block-size) 0 / var(--box-width) var(--box-height) linear-gradient(-135deg, var(--color5) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
+              calc(var(--box-height) / 4 * 3) 0 / var(--box-width) var(--box-height) linear-gradient(135deg, var(--color8) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
+
+              calc(var(--box-width) / 4 * 3 + var(--arrow-block-size)) var(--arrow-block-size) / var(--box-width) var(--box-height) linear-gradient(-45deg, var(--color8) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
+              0 var(--arrow-block-size) / var(--box-width) var(--box-height) linear-gradient(45deg, var(--color5) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
+              var(--arrow-block-size) var(--arrow-block-size) / var(--box-width) var(--box-height) linear-gradient(-135deg, var(--color5) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
+              calc(var(--box-height) / 4 * 3) var(--arrow-block-size) / var(--box-width) var(--box-height) linear-gradient(135deg, var(--color8) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
               var(--accent-color);
 `;
 const Arrow4 = styled(Example)`
@@ -174,46 +251,108 @@ const Arrow4 = styled(Example)`
   --arrow-width:  calc(2 * var(--arrow-block-size));
   --box-height:   calc(2 * var(--arrow-height));
   --box-width:    calc(2 * var(--arrow-width) + 4 * var(--arrow-space));
+  --color1: var(--secondary-color);
+  --color2: var(--secondary-color);
+  --color3: var(--primary-color);
+  --color4: var(--primary-color);
+  --color5: var(--primary-color);
+  --color6: var(--primary-color);
+  --color7: var(--secondary-color);
+  --color8: var(--secondary-color);
+  background: calc(var(--box-width) / 4 + var(--arrow-block-size)) var(--arrow-width) / var(--box-width) var(--box-height) linear-gradient(-45deg, var(--color2) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
+              calc(var(--box-width) / 2) var(--arrow-width) / var(--box-width) var(--box-height) linear-gradient(45deg, var(--color3) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
+              calc(var(--box-width) / 2 + var(--arrow-block-size)) var(--arrow-width) / var(--box-width) var(--box-height) linear-gradient(-135deg, var(--color3) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
+              calc(var(--box-width) / 4) var(--arrow-width) / var(--box-width) var(--box-height) linear-gradient(135deg, var(--color2) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
 
-  background: calc(var(--box-width) / 4 + var(--arrow-block-size)) var(--arrow-width) / var(--box-width) var(--box-height) linear-gradient(-45deg, var(--primary-color) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
-              calc(var(--box-width) / 2) var(--arrow-width) / var(--box-width) var(--box-height) linear-gradient(45deg, var(--primary-color) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
-              calc(var(--box-width) / 2 + var(--arrow-block-size)) var(--arrow-width) / var(--box-width) var(--box-height) linear-gradient(-135deg, var(--primary-color) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
-              calc(var(--box-width) / 4) var(--arrow-width) / var(--box-width) var(--box-height) linear-gradient(135deg, var(--primary-color) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
+              calc(var(--box-width) / 4 + var(--arrow-block-size)) calc(var(--box-height) / 2 + var(--arrow-block-size)) / var(--box-width) var(--box-height) linear-gradient(-45deg, var(--color2) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
+              calc(var(--box-width) / 2) calc(var(--box-height) / 2 + var(--arrow-block-size)) / var(--box-width) var(--box-height) linear-gradient(45deg, var(--color3) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
+              calc(var(--box-width) / 2 + var(--arrow-block-size)) calc(var(--box-height) / 2 + var(--arrow-block-size)) / var(--box-width) var(--box-height) linear-gradient(-135deg, var(--color3) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
+              calc(var(--box-width) / 4) calc(var(--box-height) / 2 + var(--arrow-block-size)) / var(--box-width) var(--box-height) linear-gradient(135deg, var(--color2) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
 
-              calc(var(--box-width) / 4 + var(--arrow-block-size)) calc(var(--box-height) / 2 + var(--arrow-block-size)) / var(--box-width) var(--box-height) linear-gradient(-45deg, var(--primary-color) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
-              calc(var(--box-width) / 2) calc(var(--box-height) / 2 + var(--arrow-block-size)) / var(--box-width) var(--box-height) linear-gradient(45deg, var(--primary-color) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
-              calc(var(--box-width) / 2 + var(--arrow-block-size)) calc(var(--box-height) / 2 + var(--arrow-block-size)) / var(--box-width) var(--box-height) linear-gradient(-135deg, var(--primary-color) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
-              calc(var(--box-width) / 4) calc(var(--box-height) / 2 + var(--arrow-block-size)) / var(--box-width) var(--box-height) linear-gradient(135deg, var(--primary-color) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
+              calc(var(--box-width) / 4 + var(--arrow-block-size)) var(--box-height) / var(--box-width) var(--box-height) linear-gradient(-45deg, var(--color6) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
+              calc(var(--box-width) / 2) var(--box-height) / var(--box-width) var(--box-height) linear-gradient(45deg, var(--color7) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
+              calc(var(--box-width) / 2 + var(--arrow-block-size)) 0 / var(--box-width) var(--box-height) linear-gradient(-135deg, var(--color7) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
+              calc(var(--box-width) / 4) 0 / var(--box-width) var(--box-height) linear-gradient(135deg, var(--color6) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
 
-              calc(var(--box-width) / 4 + var(--arrow-block-size)) var(--box-height) / var(--box-width) var(--box-height) linear-gradient(-45deg, var(--secondary-color) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
-              calc(var(--box-width) / 2) var(--box-height) / var(--box-width) var(--box-height) linear-gradient(45deg, var(--secondary-color) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
-              calc(var(--box-width) / 2 + var(--arrow-block-size)) 0 / var(--box-width) var(--box-height) linear-gradient(-135deg, var(--secondary-color) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
-              calc(var(--box-width) / 4) 0 / var(--box-width) var(--box-height) linear-gradient(135deg, var(--secondary-color) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
+              calc(var(--box-width) / 4 + var(--arrow-block-size)) var(--arrow-block-size) / var(--box-width) var(--box-height) linear-gradient(-45deg, var(--color6) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
+              calc(var(--box-width) / 2) var(--arrow-block-size) / var(--box-width) var(--box-height) linear-gradient(45deg, var(--color7) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
+              calc(var(--box-width) / 2 + var(--arrow-block-size)) var(--arrow-block-size) / var(--box-width) var(--box-height) linear-gradient(-135deg, var(--color7) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
+              calc(var(--box-width) / 4) var(--arrow-block-size) / var(--box-width) var(--box-height) linear-gradient(135deg, var(--color6) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
 
-              calc(var(--box-width) / 4 + var(--arrow-block-size)) var(--arrow-block-size) / var(--box-width) var(--box-height) linear-gradient(-45deg, var(--secondary-color) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
-              calc(var(--box-width) / 2) var(--arrow-block-size) / var(--box-width) var(--box-height) linear-gradient(45deg, var(--secondary-color) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
-              calc(var(--box-width) / 2 + var(--arrow-block-size)) var(--arrow-block-size) / var(--box-width) var(--box-height) linear-gradient(-135deg, var(--secondary-color) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
-              calc(var(--box-width) / 4) var(--arrow-block-size) / var(--box-width) var(--box-height) linear-gradient(135deg, var(--secondary-color) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
+              calc(var(--box-width) / 4 * 3 + var(--arrow-block-size)) var(--arrow-width) / var(--box-width) var(--box-height) linear-gradient(-45deg, var(--color4) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
+              0 var(--arrow-width) / var(--box-width) var(--box-height) linear-gradient(45deg, var(--color1) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
+              var(--arrow-block-size) var(--arrow-width) / var(--box-width) var(--box-height) linear-gradient(-135deg, var(--color1) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
+              calc(var(--box-width) / 4 * 3) var(--arrow-width) / var(--box-width) var(--box-height) linear-gradient(135deg, var(--color4) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
 
-              calc(var(--box-width) / 4 * 3 + var(--arrow-block-size)) var(--arrow-width) / var(--box-width) var(--box-height) linear-gradient(-45deg, var(--secondary-color) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
-              0 var(--arrow-width) / var(--box-width) var(--box-height) linear-gradient(45deg, var(--secondary-color) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
-              var(--arrow-block-size) var(--arrow-width) / var(--box-width) var(--box-height) linear-gradient(-135deg, var(--secondary-color) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
-              calc(var(--box-width) / 4 * 3) var(--arrow-width) / var(--box-width) var(--box-height) linear-gradient(135deg, var(--secondary-color) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
+              calc(var(--box-width) / 4 * 3 + var(--arrow-block-size)) calc(var(--box-height) / 2 + var(--arrow-block-size)) / var(--box-width) var(--box-height) linear-gradient(-45deg, var(--color4) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
+              0 calc(var(--box-height) / 2 + var(--arrow-block-size)) / var(--box-width) var(--box-height) linear-gradient(45deg, var(--color1) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
+              var(--arrow-block-size) calc(var(--box-height) / 2 + var(--arrow-block-size)) / var(--box-width) var(--box-height) linear-gradient(-135deg, var(--color1) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
+              calc(var(--box-width) / 4 * 3) calc(var(--box-height) / 2 + var(--arrow-block-size)) / var(--box-width) var(--box-height) linear-gradient(135deg, var(--color4) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
 
-              calc(var(--box-width) / 4 * 3 + var(--arrow-block-size)) calc(var(--box-height) / 2 + var(--arrow-block-size)) / var(--box-width) var(--box-height) linear-gradient(-45deg, var(--secondary-color) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
-              0 calc(var(--box-height) / 2 + var(--arrow-block-size)) / var(--box-width) var(--box-height) linear-gradient(45deg, var(--secondary-color) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
-              var(--arrow-block-size) calc(var(--box-height) / 2 + var(--arrow-block-size)) / var(--box-width) var(--box-height) linear-gradient(-135deg, var(--secondary-color) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
-              calc(var(--box-width) / 4 * 3) calc(var(--box-height) / 2 + var(--arrow-block-size)) / var(--box-width) var(--box-height) linear-gradient(135deg, var(--secondary-color) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
+              calc(var(--box-width) / 4 * 3 + var(--arrow-block-size)) var(--box-height) / var(--box-width) var(--box-height) linear-gradient(-45deg, var(--color8) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
+              0 var(--box-height) / var(--box-width) var(--box-height) linear-gradient(45deg, var(--color5) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
+              var(--arrow-block-size) 0 / var(--box-width) var(--box-height) linear-gradient(-135deg, var(--color5) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
+              calc(var(--box-width) / 4 * 3) 0 / var(--box-width) var(--box-height) linear-gradient(135deg, var(--color8) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
 
-              calc(var(--box-width) / 4 * 3 + var(--arrow-block-size)) var(--box-height) / var(--box-width) var(--box-height) linear-gradient(-45deg, var(--primary-color) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
-              0 var(--box-height) / var(--box-width) var(--box-height) linear-gradient(45deg, var(--primary-color) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
-              var(--arrow-block-size) 0 / var(--box-width) var(--box-height) linear-gradient(-135deg, var(--primary-color) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
-              calc(var(--box-width) / 4 * 3) 0 / var(--box-width) var(--box-height) linear-gradient(135deg, var(--primary-color) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
+              calc(var(--box-width) / 4 * 3 + var(--arrow-block-size)) var(--arrow-block-size) / var(--box-width) var(--box-height) linear-gradient(-45deg, var(--color8) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
+              0 var(--arrow-block-size) / var(--box-width) var(--box-height) linear-gradient(45deg, var(--color5) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
+              var(--arrow-block-size) var(--arrow-block-size) / var(--box-width) var(--box-height) linear-gradient(-135deg, var(--color5) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
+              calc(var(--box-width) / 4 * 3) var(--arrow-block-size) / var(--box-width) var(--box-height) linear-gradient(135deg, var(--color8) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
+              var(--accent-color);
+`;
+const Arrow4Rev = styled(Example)`
+  --sqrt2:        1.5;
+  --arrow-height: calc(2 * var(--arrow-block-size));
+  --arrow-width:  calc(2 * var(--arrow-block-size));
+  --box-height:   calc(2 * var(--arrow-height));
+  --box-width:    calc(2 * var(--arrow-width) + 4 * var(--arrow-space));
+  --color1: var(--secondary-color);
+  --color2: var(--primary-color);
+  --color3: var(--primary-color);
+  --color4: var(--secondary-color);
+  --color5: var(--primary-color);
+  --color6: var(--secondary-color);
+  --color7: var(--secondary-color);
+  --color8: var(--primary-color);
+  background: calc(var(--box-width) / 4 + var(--arrow-block-size)) var(--arrow-width) / var(--box-width) var(--box-height) linear-gradient(-45deg, var(--color2) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
+              calc(var(--box-width) / 2) var(--arrow-width) / var(--box-width) var(--box-height) linear-gradient(45deg, var(--color3) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
+              calc(var(--box-width) / 2 + var(--arrow-block-size)) var(--arrow-width) / var(--box-width) var(--box-height) linear-gradient(-135deg, var(--color3) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
+              calc(var(--box-width) / 4) var(--arrow-width) / var(--box-width) var(--box-height) linear-gradient(135deg, var(--color2) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
 
-              calc(var(--box-width) / 4 * 3 + var(--arrow-block-size)) var(--arrow-block-size) / var(--box-width) var(--box-height) linear-gradient(-45deg, var(--primary-color) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
-              0 var(--arrow-block-size) / var(--box-width) var(--box-height) linear-gradient(45deg, var(--primary-color) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
-              var(--arrow-block-size) var(--arrow-block-size) / var(--box-width) var(--box-height) linear-gradient(-135deg, var(--primary-color) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
-              calc(var(--box-width) / 4 * 3) var(--arrow-block-size) / var(--box-width) var(--box-height) linear-gradient(135deg, var(--primary-color) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
+              calc(var(--box-width) / 4 + var(--arrow-block-size)) calc(var(--box-height) / 2 + var(--arrow-block-size)) / var(--box-width) var(--box-height) linear-gradient(-45deg, var(--color2) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
+              calc(var(--box-width) / 2) calc(var(--box-height) / 2 + var(--arrow-block-size)) / var(--box-width) var(--box-height) linear-gradient(45deg, var(--color3) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
+              calc(var(--box-width) / 2 + var(--arrow-block-size)) calc(var(--box-height) / 2 + var(--arrow-block-size)) / var(--box-width) var(--box-height) linear-gradient(-135deg, var(--color3) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
+              calc(var(--box-width) / 4) calc(var(--box-height) / 2 + var(--arrow-block-size)) / var(--box-width) var(--box-height) linear-gradient(135deg, var(--color2) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
+
+              calc(var(--box-width) / 4 + var(--arrow-block-size)) var(--box-height) / var(--box-width) var(--box-height) linear-gradient(-45deg, var(--color6) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
+              calc(var(--box-width) / 2) var(--box-height) / var(--box-width) var(--box-height) linear-gradient(45deg, var(--color7) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
+              calc(var(--box-width) / 2 + var(--arrow-block-size)) 0 / var(--box-width) var(--box-height) linear-gradient(-135deg, var(--color7) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
+              calc(var(--box-width) / 4) 0 / var(--box-width) var(--box-height) linear-gradient(135deg, var(--color6) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
+
+              calc(var(--box-width) / 4 + var(--arrow-block-size)) var(--arrow-block-size) / var(--box-width) var(--box-height) linear-gradient(-45deg, var(--color6) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
+              calc(var(--box-width) / 2) var(--arrow-block-size) / var(--box-width) var(--box-height) linear-gradient(45deg, var(--color7) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
+              calc(var(--box-width) / 2 + var(--arrow-block-size)) var(--arrow-block-size) / var(--box-width) var(--box-height) linear-gradient(-135deg, var(--color7) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
+              calc(var(--box-width) / 4) var(--arrow-block-size) / var(--box-width) var(--box-height) linear-gradient(135deg, var(--color6) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
+
+              calc(var(--box-width) / 4 * 3 + var(--arrow-block-size)) var(--arrow-width) / var(--box-width) var(--box-height) linear-gradient(-45deg, var(--color4) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
+              0 var(--arrow-width) / var(--box-width) var(--box-height) linear-gradient(45deg, var(--color1) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
+              var(--arrow-block-size) var(--arrow-width) / var(--box-width) var(--box-height) linear-gradient(-135deg, var(--color1) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
+              calc(var(--box-width) / 4 * 3) var(--arrow-width) / var(--box-width) var(--box-height) linear-gradient(135deg, var(--color4) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
+
+              calc(var(--box-width) / 4 * 3 + var(--arrow-block-size)) calc(var(--box-height) / 2 + var(--arrow-block-size)) / var(--box-width) var(--box-height) linear-gradient(-45deg, var(--color4) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
+              0 calc(var(--box-height) / 2 + var(--arrow-block-size)) / var(--box-width) var(--box-height) linear-gradient(45deg, var(--color1) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
+              var(--arrow-block-size) calc(var(--box-height) / 2 + var(--arrow-block-size)) / var(--box-width) var(--box-height) linear-gradient(-135deg, var(--color1) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
+              calc(var(--box-width) / 4 * 3) calc(var(--box-height) / 2 + var(--arrow-block-size)) / var(--box-width) var(--box-height) linear-gradient(135deg, var(--color4) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
+
+              calc(var(--box-width) / 4 * 3 + var(--arrow-block-size)) var(--box-height) / var(--box-width) var(--box-height) linear-gradient(-45deg, var(--color8) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
+              0 var(--box-height) / var(--box-width) var(--box-height) linear-gradient(45deg, var(--color5) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
+              var(--arrow-block-size) 0 / var(--box-width) var(--box-height) linear-gradient(-135deg, var(--color5) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
+              calc(var(--box-width) / 4 * 3) 0 / var(--box-width) var(--box-height) linear-gradient(135deg, var(--color8) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
+
+              calc(var(--box-width) / 4 * 3 + var(--arrow-block-size)) var(--arrow-block-size) / var(--box-width) var(--box-height) linear-gradient(-45deg, var(--color8) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
+              0 var(--arrow-block-size) / var(--box-width) var(--box-height) linear-gradient(45deg, var(--color5) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
+              var(--arrow-block-size) var(--arrow-block-size) / var(--box-width) var(--box-height) linear-gradient(-135deg, var(--color5) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
+              calc(var(--box-width) / 4 * 3) var(--arrow-block-size) / var(--box-width) var(--box-height) linear-gradient(135deg, var(--color8) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
               var(--accent-color);
 `;
 const Arrow5 = styled(Example)`
@@ -222,94 +361,229 @@ const Arrow5 = styled(Example)`
   --arrow-width:  calc(2 * var(--arrow-block-size));
   --box-height:   calc(2 * var(--arrow-height));
   --box-width:    calc(2 * var(--arrow-width) + 2 * var(--arrow-space));
-
-  background: var(--arrow-block-size) var(--arrow-height) / var(--box-width) var(--box-height) linear-gradient(-45deg, var(--primary-color) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
-              calc(var(--arrow-block-size) + var(--arrow-space)) var(--arrow-height) / var(--box-width) var(--box-height) linear-gradient(45deg, var(--primary-color) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
-              calc(var(--box-width) / 2) var(--arrow-height) / var(--box-width) var(--box-height) linear-gradient(-135deg, var(--primary-color) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
-              0 var(--arrow-height) / var(--box-width) var(--box-height) linear-gradient(135deg, var(--primary-color) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
+  --color1: var(--secondary-color);
+  --color2: var(--primary-color);
+  --color3: var(--primary-color);
+  --color4: var(--secondary-color);
+  --color5: var(--primary-color);
+  --color6: var(--secondary-color);
+  --color7: var(--secondary-color);
+  --color8: var(--primary-color);
+  background: var(--arrow-block-size) var(--arrow-height) / var(--box-width) var(--box-height) linear-gradient(-135deg, var(--color2) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
+              calc(var(--arrow-block-size) + var(--arrow-space)) var(--arrow-height) / var(--box-width) var(--box-height) linear-gradient(135deg, var(--color3) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
+              calc(var(--box-width) / 2) var(--arrow-height) / var(--box-width) var(--box-height) linear-gradient(-45deg, var(--color3) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
+              0 var(--arrow-height) / var(--box-width) var(--box-height) linear-gradient(45deg, var(--color2) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
               
-              var(--arrow-block-size) calc(var(--arrow-height) + var(--arrow-block-size)) / var(--box-width) var(--box-height) linear-gradient(-45deg, var(--primary-color) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
-              calc(var(--arrow-block-size) + var(--arrow-space)) calc(var(--arrow-height) + var(--arrow-block-size)) / var(--box-width) var(--box-height) linear-gradient(45deg, var(--primary-color) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
-              calc(var(--box-width) / 2) calc(var(--arrow-height) + var(--arrow-block-size)) / var(--box-width) var(--box-height) linear-gradient(-135deg, var(--primary-color) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
-              0 calc(var(--arrow-height) + var(--arrow-block-size)) / var(--box-width) var(--box-height) linear-gradient(135deg, var(--primary-color) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
+              var(--arrow-block-size) calc(var(--arrow-height) + var(--arrow-block-size)) / var(--box-width) var(--box-height) linear-gradient(-135deg, var(--color2) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
+              calc(var(--arrow-block-size) + var(--arrow-space)) calc(var(--arrow-height) + var(--arrow-block-size)) / var(--box-width) var(--box-height) linear-gradient(135deg, var(--color3) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
+              calc(var(--box-width) / 2) calc(var(--arrow-height) + var(--arrow-block-size)) / var(--box-width) var(--box-height) linear-gradient(-45deg, var(--color3) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
+              0 calc(var(--arrow-height) + var(--arrow-block-size)) / var(--box-width) var(--box-height) linear-gradient(45deg, var(--color2) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
               
-              var(--arrow-block-size) var(--box-height) / var(--box-width) var(--box-height) linear-gradient(-45deg, var(--secondary-color) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
-              calc(var(--arrow-block-size) + var(--arrow-space)) var(--box-height) / var(--box-width) var(--box-height) linear-gradient(45deg, var(--secondary-color) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
-              calc(var(--box-width) / 2) 0 / var(--box-width) var(--box-height) linear-gradient(-135deg, var(--secondary-color) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
-              0 0 / var(--box-width) var(--box-height) linear-gradient(135deg, var(--secondary-color) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
+              var(--arrow-block-size) var(--box-height) / var(--box-width) var(--box-height) linear-gradient(-135deg, var(--color6) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
+              calc(var(--arrow-block-size) + var(--arrow-space)) var(--box-height) / var(--box-width) var(--box-height) linear-gradient(135deg, var(--color7) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
+              calc(var(--box-width) / 2) 0 / var(--box-width) var(--box-height) linear-gradient(-45deg, var(--color7) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
+              0 0 / var(--box-width) var(--box-height) linear-gradient(45deg, var(--color6) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
               
-              var(--arrow-block-size) var(--arrow-block-size) / var(--box-width) var(--box-height) linear-gradient(-45deg, var(--secondary-color) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
-              calc(var(--arrow-block-size) + var(--arrow-space)) var(--arrow-block-size) / var(--box-width) var(--box-height) linear-gradient(45deg, var(--secondary-color) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
-              calc(var(--box-width) / 2) var(--arrow-block-size) / var(--box-width) var(--box-height) linear-gradient(-135deg, var(--secondary-color) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
-              0 var(--arrow-block-size) / var(--box-width) var(--box-height) linear-gradient(135deg, var(--secondary-color) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
+              var(--arrow-block-size) var(--arrow-block-size) / var(--box-width) var(--box-height) linear-gradient(-135deg, var(--color6) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
+              calc(var(--arrow-block-size) + var(--arrow-space)) var(--arrow-block-size) / var(--box-width) var(--box-height) linear-gradient(135deg, var(--color7) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
+              calc(var(--box-width) / 2) var(--arrow-block-size) / var(--box-width) var(--box-height) linear-gradient(-45deg, var(--color7) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
+              0 var(--arrow-block-size) / var(--box-width) var(--box-height) linear-gradient(45deg, var(--color6) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
               
-              calc(var(--box-width) / 2 + var(--arrow-block-size)) var(--arrow-height) / var(--box-width) var(--box-height) linear-gradient(-45deg, var(--secondary-color) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
-              calc(var(--box-width) / 2 + var(--arrow-block-size) + var(--arrow-space)) var(--arrow-height) / var(--box-width) var(--box-height) linear-gradient(45deg, var(--secondary-color) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
-              var(--box-width) var(--arrow-height) / var(--box-width) var(--box-height) linear-gradient(-135deg, var(--secondary-color) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
-              calc(var(--box-width) / 2) var(--arrow-height) / var(--box-width) var(--box-height) linear-gradient(135deg, var(--secondary-color) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
+              calc(var(--box-width) / 2 + var(--arrow-block-size)) var(--arrow-height) / var(--box-width) var(--box-height) linear-gradient(-135deg, var(--color4) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
+              calc(var(--box-width) / 2 + var(--arrow-block-size) + var(--arrow-space)) var(--arrow-height) / var(--box-width) var(--box-height) linear-gradient(135deg, var(--color1) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
+              var(--box-width) var(--arrow-height) / var(--box-width) var(--box-height) linear-gradient(-45deg, var(--color1) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
+              calc(var(--box-width) / 2) var(--arrow-height) / var(--box-width) var(--box-height) linear-gradient(45deg, var(--color4) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
               
-              calc(var(--box-width) / 2 + var(--arrow-block-size)) calc(var(--arrow-height) + var(--arrow-block-size)) / var(--box-width) var(--box-height) linear-gradient(-45deg, var(--secondary-color) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
-              calc(var(--box-width) / 2 + var(--arrow-block-size) + var(--arrow-space)) calc(var(--arrow-height) + var(--arrow-block-size)) / var(--box-width) var(--box-height) linear-gradient(45deg, var(--secondary-color) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
-              var(--box-width) calc(var(--arrow-height) + var(--arrow-block-size)) / var(--box-width) var(--box-height) linear-gradient(-135deg, var(--secondary-color) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
-              calc(var(--box-width) / 2) calc(var(--arrow-height) + var(--arrow-block-size)) / var(--box-width) var(--box-height) linear-gradient(135deg, var(--secondary-color) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
+              calc(var(--box-width) / 2 + var(--arrow-block-size)) calc(var(--arrow-height) + var(--arrow-block-size)) / var(--box-width) var(--box-height) linear-gradient(-135deg, var(--color4) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
+              calc(var(--box-width) / 2 + var(--arrow-block-size) + var(--arrow-space)) calc(var(--arrow-height) + var(--arrow-block-size)) / var(--box-width) var(--box-height) linear-gradient(135deg, var(--color1) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
+              var(--box-width) calc(var(--arrow-height) + var(--arrow-block-size)) / var(--box-width) var(--box-height) linear-gradient(-45deg, var(--color1) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
+              calc(var(--box-width) / 2) calc(var(--arrow-height) + var(--arrow-block-size)) / var(--box-width) var(--box-height) linear-gradient(45deg, var(--color4) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
               
-              calc(var(--box-width) / 2 + var(--arrow-block-size)) var(--box-height) / var(--box-width) var(--box-height) linear-gradient(-45deg, var(--primary-color) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
-              calc(var(--box-width) / 2 + var(--arrow-block-size) + var(--arrow-space)) var(--box-height) / var(--box-width) var(--box-height) linear-gradient(45deg, var(--primary-color) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
-              var(--box-width) 0 / var(--box-width) var(--box-height) linear-gradient(-135deg, var(--primary-color) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
-              calc(var(--box-width) / 2) 0 / var(--box-width) var(--box-height) linear-gradient(135deg, var(--primary-color) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
+              calc(var(--box-width) / 2 + var(--arrow-block-size)) var(--box-height) / var(--box-width) var(--box-height) linear-gradient(-135deg, var(--color8) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
+              calc(var(--box-width) / 2 + var(--arrow-block-size) + var(--arrow-space)) var(--box-height) / var(--box-width) var(--box-height) linear-gradient(135deg, var(--color5) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
+              var(--box-width) 0 / var(--box-width) var(--box-height) linear-gradient(-45deg, var(--color5) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
+              calc(var(--box-width) / 2) 0 / var(--box-width) var(--box-height) linear-gradient(45deg, var(--color8) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
               
-              calc(var(--box-width) / 2 + var(--arrow-block-size)) var(--arrow-block-size) / var(--box-width) var(--box-height) linear-gradient(-45deg, var(--primary-color) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
-              calc(var(--box-width) / 2 + var(--arrow-block-size) + var(--arrow-space)) var(--arrow-block-size) / var(--box-width) var(--box-height) linear-gradient(45deg, var(--primary-color) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
-              var(--box-width) var(--arrow-block-size) / var(--box-width) var(--box-height) linear-gradient(-135deg, var(--primary-color) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
-              calc(var(--box-width) / 2) var(--arrow-block-size) / var(--box-width) var(--box-height) linear-gradient(135deg, var(--primary-color) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
+              calc(var(--box-width) / 2 + var(--arrow-block-size)) var(--arrow-block-size) / var(--box-width) var(--box-height) linear-gradient(-135deg, var(--color8) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
+              calc(var(--box-width) / 2 + var(--arrow-block-size) + var(--arrow-space)) var(--arrow-block-size) / var(--box-width) var(--box-height) linear-gradient(135deg, var(--color5) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
+              var(--box-width) var(--arrow-block-size) / var(--box-width) var(--box-height) linear-gradient(-45deg, var(--color5) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
+              calc(var(--box-width) / 2) var(--arrow-block-size) / var(--box-width) var(--box-height) linear-gradient(45deg, var(--color8) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
               var(--accent-color);
 `;
+const Arrow5Rev = styled(Example)`
+  --sqrt2:        1.5;
+  --arrow-height: calc(2 * var(--arrow-block-size));
+  --arrow-width:  calc(2 * var(--arrow-block-size));
+  --box-height:   calc(2 * var(--arrow-height));
+  --box-width:    calc(2 * var(--arrow-width) + 2 * var(--arrow-space));
+  --color1: var(--secondary-color);
+  --color2: var(--primary-color);
+  --color3: var(--primary-color);
+  --color4: var(--secondary-color);
+  --color5: var(--primary-color);
+  --color6: var(--secondary-color);
+  --color7: var(--secondary-color);
+  --color8: var(--primary-color);
+  background: var(--arrow-block-size) var(--arrow-height) / var(--box-width) var(--box-height) linear-gradient(-45deg, var(--color2) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
+              calc(var(--arrow-block-size) + var(--arrow-space)) var(--arrow-height) / var(--box-width) var(--box-height) linear-gradient(45deg, var(--color3) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
+              calc(var(--box-width) / 2) var(--arrow-height) / var(--box-width) var(--box-height) linear-gradient(-135deg, var(--color3) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
+              0 var(--arrow-height) / var(--box-width) var(--box-height) linear-gradient(135deg, var(--color2) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
+              
+              var(--arrow-block-size) calc(var(--arrow-height) + var(--arrow-block-size)) / var(--box-width) var(--box-height) linear-gradient(-45deg, var(--color2) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
+              calc(var(--arrow-block-size) + var(--arrow-space)) calc(var(--arrow-height) + var(--arrow-block-size)) / var(--box-width) var(--box-height) linear-gradient(45deg, var(--color3) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
+              calc(var(--box-width) / 2) calc(var(--arrow-height) + var(--arrow-block-size)) / var(--box-width) var(--box-height) linear-gradient(-135deg, var(--color3) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
+              0 calc(var(--arrow-height) + var(--arrow-block-size)) / var(--box-width) var(--box-height) linear-gradient(135deg, var(--color2) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
+              
+              var(--arrow-block-size) var(--box-height) / var(--box-width) var(--box-height) linear-gradient(-45deg, var(--color6) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
+              calc(var(--arrow-block-size) + var(--arrow-space)) var(--box-height) / var(--box-width) var(--box-height) linear-gradient(45deg, var(--color7) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
+              calc(var(--box-width) / 2) 0 / var(--box-width) var(--box-height) linear-gradient(-135deg, var(--color7) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
+              0 0 / var(--box-width) var(--box-height) linear-gradient(135deg, var(--color6) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
+              
+              var(--arrow-block-size) var(--arrow-block-size) / var(--box-width) var(--box-height) linear-gradient(-45deg, var(--color6) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
+              calc(var(--arrow-block-size) + var(--arrow-space)) var(--arrow-block-size) / var(--box-width) var(--box-height) linear-gradient(45deg, var(--color7) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
+              calc(var(--box-width) / 2) var(--arrow-block-size) / var(--box-width) var(--box-height) linear-gradient(-135deg, var(--color7) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
+              0 var(--arrow-block-size) / var(--box-width) var(--box-height) linear-gradient(135deg, var(--color6) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
+              
+              calc(var(--box-width) / 2 + var(--arrow-block-size)) var(--arrow-height) / var(--box-width) var(--box-height) linear-gradient(-45deg, var(--color4) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
+              calc(var(--box-width) / 2 + var(--arrow-block-size) + var(--arrow-space)) var(--arrow-height) / var(--box-width) var(--box-height) linear-gradient(45deg, var(--color1) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
+              var(--box-width) var(--arrow-height) / var(--box-width) var(--box-height) linear-gradient(-135deg, var(--color1) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
+              calc(var(--box-width) / 2) var(--arrow-height) / var(--box-width) var(--box-height) linear-gradient(135deg, var(--color4) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
+              
+              calc(var(--box-width) / 2 + var(--arrow-block-size)) calc(var(--arrow-height) + var(--arrow-block-size)) / var(--box-width) var(--box-height) linear-gradient(-45deg, var(--color4) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
+              calc(var(--box-width) / 2 + var(--arrow-block-size) + var(--arrow-space)) calc(var(--arrow-height) + var(--arrow-block-size)) / var(--box-width) var(--box-height) linear-gradient(45deg, var(--color1) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
+              var(--box-width) calc(var(--arrow-height) + var(--arrow-block-size)) / var(--box-width) var(--box-height) linear-gradient(-135deg, var(--color1) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
+              calc(var(--box-width) / 2) calc(var(--arrow-height) + var(--arrow-block-size)) / var(--box-width) var(--box-height) linear-gradient(135deg, var(--color4) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
+              
+              calc(var(--box-width) / 2 + var(--arrow-block-size)) var(--box-height) / var(--box-width) var(--box-height) linear-gradient(-45deg, var(--color8) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
+              calc(var(--box-width) / 2 + var(--arrow-block-size) + var(--arrow-space)) var(--box-height) / var(--box-width) var(--box-height) linear-gradient(45deg, var(--color5) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
+              var(--box-width) 0 / var(--box-width) var(--box-height) linear-gradient(-135deg, var(--color5) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
+              calc(var(--box-width) / 2) 0 / var(--box-width) var(--box-height) linear-gradient(135deg, var(--color8) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
+              
+              calc(var(--box-width) / 2 + var(--arrow-block-size)) var(--arrow-block-size) / var(--box-width) var(--box-height) linear-gradient(-45deg, var(--color8) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
+              calc(var(--box-width) / 2 + var(--arrow-block-size) + var(--arrow-space)) var(--arrow-block-size) / var(--box-width) var(--box-height) linear-gradient(45deg, var(--color5) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
+              var(--box-width) var(--arrow-block-size) / var(--box-width) var(--box-height) linear-gradient(-135deg, var(--color5) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
+              calc(var(--box-width) / 2) var(--arrow-block-size) / var(--box-width) var(--box-height) linear-gradient(135deg, var(--color8) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
+              var(--accent-color);
+`;
+
 const Yagasuri = styled(Example)`
   --sqrt2:        1.5;
   --arrow-height: calc(2 * var(--arrow-block-size));
   --arrow-width:  calc(2 * var(--arrow-block-size));
   --box-height:   calc(2 * var(--arrow-height));
   --box-width:    calc(2 * var(--arrow-width) + 2 * var(--arrow-space));
+  --color1: var(--secondary-color);
+  --color2: var(--primary-color);
+  --color3: var(--primary-color);
+  --color4: var(--secondary-color);
+  --color5: var(--primary-color);
+  --color6: var(--secondary-color);
+  --color7: var(--secondary-color);
+  --color8: var(--primary-color);
+  background: var(--arrow-block-size) var(--arrow-height) / var(--box-width) var(--box-height) linear-gradient(-135deg, var(--color2) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
+              calc(var(--arrow-block-size) + var(--arrow-space)) var(--arrow-height) / var(--box-width) var(--box-height) linear-gradient(135deg, var(--color3) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
+              calc(var(--box-width) / 2) var(--arrow-height) / var(--box-width) var(--box-height) linear-gradient(-45deg, var(--color3) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
+              0 var(--arrow-height) / var(--box-width) var(--box-height) linear-gradient(45deg, var(--color2) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
+              
+              var(--arrow-block-size) calc(var(--arrow-height) + var(--arrow-block-size)) / var(--box-width) var(--box-height) linear-gradient(-135deg, var(--color2) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
+              calc(var(--arrow-block-size) + var(--arrow-space)) calc(var(--arrow-height) + var(--arrow-block-size)) / var(--box-width) var(--box-height) linear-gradient(135deg, var(--color3) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
+              calc(var(--box-width) / 2) calc(var(--arrow-height) + var(--arrow-block-size)) / var(--box-width) var(--box-height) linear-gradient(-45deg, var(--color3) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
+              0 calc(var(--arrow-height) + var(--arrow-block-size)) / var(--box-width) var(--box-height) linear-gradient(45deg, var(--color2) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
+              
+              var(--arrow-block-size) var(--box-height) / var(--box-width) var(--box-height) linear-gradient(-135deg, var(--color6) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
+              calc(var(--arrow-block-size) + var(--arrow-space)) var(--box-height) / var(--box-width) var(--box-height) linear-gradient(135deg, var(--color7) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
+              calc(var(--box-width) / 2) 0 / var(--box-width) var(--box-height) linear-gradient(-45deg, var(--color7) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
+              0 0 / var(--box-width) var(--box-height) linear-gradient(45deg, var(--color6) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
+              
+              var(--arrow-block-size) var(--arrow-block-size) / var(--box-width) var(--box-height) linear-gradient(-135deg, var(--color6) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
+              calc(var(--arrow-block-size) + var(--arrow-space)) var(--arrow-block-size) / var(--box-width) var(--box-height) linear-gradient(135deg, var(--color7) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
+              calc(var(--box-width) / 2) var(--arrow-block-size) / var(--box-width) var(--box-height) linear-gradient(-45deg, var(--color7) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
+              0 var(--arrow-block-size) / var(--box-width) var(--box-height) linear-gradient(45deg, var(--color6) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
+              
+              calc(var(--box-width) / 2 + var(--arrow-block-size)) var(--arrow-height) / var(--box-width) var(--box-height) linear-gradient(-135deg, var(--color4) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
+              calc(var(--box-width) / 2 + var(--arrow-block-size) + var(--arrow-space)) var(--arrow-height) / var(--box-width) var(--box-height) linear-gradient(135deg, var(--color1) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
+              var(--box-width) var(--arrow-height) / var(--box-width) var(--box-height) linear-gradient(-45deg, var(--color1) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
+              calc(var(--box-width) / 2) var(--arrow-height) / var(--box-width) var(--box-height) linear-gradient(45deg, var(--color4) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
+              
+              calc(var(--box-width) / 2 + var(--arrow-block-size)) calc(var(--arrow-height) + var(--arrow-block-size)) / var(--box-width) var(--box-height) linear-gradient(-135deg, var(--color4) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
+              calc(var(--box-width) / 2 + var(--arrow-block-size) + var(--arrow-space)) calc(var(--arrow-height) + var(--arrow-block-size)) / var(--box-width) var(--box-height) linear-gradient(135deg, var(--color1) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
+              var(--box-width) calc(var(--arrow-height) + var(--arrow-block-size)) / var(--box-width) var(--box-height) linear-gradient(-45deg, var(--color1) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
+              calc(var(--box-width) / 2) calc(var(--arrow-height) + var(--arrow-block-size)) / var(--box-width) var(--box-height) linear-gradient(45deg, var(--color4) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
+              
+              calc(var(--box-width) / 2 + var(--arrow-block-size)) var(--box-height) / var(--box-width) var(--box-height) linear-gradient(-135deg, var(--color8) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
+              calc(var(--box-width) / 2 + var(--arrow-block-size) + var(--arrow-space)) var(--box-height) / var(--box-width) var(--box-height) linear-gradient(135deg, var(--color5) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
+              var(--box-width) 0 / var(--box-width) var(--box-height) linear-gradient(-45deg, var(--color5) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
+              calc(var(--box-width) / 2) 0 / var(--box-width) var(--box-height) linear-gradient(45deg, var(--color8) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
+              
+              calc(var(--box-width) / 2 + var(--arrow-block-size)) var(--arrow-block-size) / var(--box-width) var(--box-height) linear-gradient(-135deg, var(--color8) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
+              calc(var(--box-width) / 2 + var(--arrow-block-size) + var(--arrow-space)) var(--arrow-block-size) / var(--box-width) var(--box-height) linear-gradient(135deg, var(--color5) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
+              var(--box-width) var(--arrow-block-size) / var(--box-width) var(--box-height) linear-gradient(-45deg, var(--color5) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
+              calc(var(--box-width) / 2) var(--arrow-block-size) / var(--box-width) var(--box-height) linear-gradient(45deg, var(--color8) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
 
-  background: var(--arrow-block-size) var(--arrow-height) / var(--box-width) var(--box-height) linear-gradient(-45deg, var(--primary-color) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
-              calc(var(--arrow-block-size) + var(--arrow-space)) var(--arrow-height) / var(--box-width) var(--box-height) linear-gradient(45deg, var(--primary-color) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
-              calc(var(--box-width) / 2) var(--arrow-height) / var(--box-width) var(--box-height) linear-gradient(-135deg, var(--primary-color) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
-              0 var(--arrow-height) / var(--box-width) var(--box-height) linear-gradient(135deg, var(--primary-color) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
+                calc(var(--box-width) / 2) calc(var(--arrow-block-size) * 2) / var(--box-width) var(--box-height) linear-gradient(45deg, var(--secondary-color) 0 25%, transparent 0),
+                0 calc(var(--arrow-height) + var(--arrow-block-size) * 2) / var(--box-width) var(--box-height) linear-gradient(45deg, transparent 0 75%, var(--secondary-color) 0),
+                calc(var(--box-width) / 2) calc(var(--arrow-block-size) * 2) / var(--box-width) var(--box-height) linear-gradient(-45deg, var(--primary-color) 0 25%, transparent 0),
+                0 calc(var(--arrow-height) + var(--arrow-block-size) * 2) / var(--box-width) var(--box-height) linear-gradient(-45deg, transparent 0 75%, var(--primary-color) 0),
+
+                calc(var(--box-width) / 2) calc(var(--arrow-height) + var(--arrow-block-size) * 2) / var(--box-width) var(--box-height) linear-gradient(45deg, var(--primary-color) 0 25%, transparent 0),
+                0 calc(var(--box-height) + var(--arrow-block-size) * 2) / var(--box-width) var(--box-height) linear-gradient(45deg, transparent 0 75%, var(--primary-color) 0),
+                calc(var(--box-width) / 2) calc(var(--arrow-height) + var(--arrow-block-size) * 2) / var(--box-width) var(--box-height) linear-gradient(-45deg, var(--secondary-color) 0 25%, transparent 0),
+                0 calc(var(--box-height) + var(--arrow-block-size) * 2) / var(--box-width) var(--box-height) linear-gradient(-45deg, transparent 0 75%, var(--secondary-color) 0);
+`;
+
+const YagasuriRev = styled(Example)`
+  --sqrt2:        1.5;
+  --arrow-height: calc(2 * var(--arrow-block-size));
+  --arrow-width:  calc(2 * var(--arrow-block-size));
+  --box-height:   calc(2 * var(--arrow-height));
+  --box-width:    calc(2 * var(--arrow-width) + 2 * var(--arrow-space));
+  --color1: var(--secondary-color);
+  --color2: var(--primary-color);
+  --color3: var(--primary-color);
+  --color4: var(--secondary-color);
+  --color5: var(--primary-color);
+  --color6: var(--secondary-color);
+  --color7: var(--secondary-color);
+  --color8: var(--primary-color);
+  background: var(--arrow-block-size) var(--arrow-height) / var(--box-width) var(--box-height) linear-gradient(-45deg, var(--color2) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
+              calc(var(--arrow-block-size) + var(--arrow-space)) var(--arrow-height) / var(--box-width) var(--box-height) linear-gradient(45deg, var(--color3) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
+              calc(var(--box-width) / 2) var(--arrow-height) / var(--box-width) var(--box-height) linear-gradient(-135deg, var(--color3) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
+              0 var(--arrow-height) / var(--box-width) var(--box-height) linear-gradient(135deg, var(--color2) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
               
-              var(--arrow-block-size) calc(var(--arrow-height) + var(--arrow-block-size)) / var(--box-width) var(--box-height) linear-gradient(-45deg, var(--primary-color) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
-              calc(var(--arrow-block-size) + var(--arrow-space)) calc(var(--arrow-height) + var(--arrow-block-size)) / var(--box-width) var(--box-height) linear-gradient(45deg, var(--primary-color) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
-              calc(var(--box-width) / 2) calc(var(--arrow-height) + var(--arrow-block-size)) / var(--box-width) var(--box-height) linear-gradient(-135deg, var(--primary-color) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
-              0 calc(var(--arrow-height) + var(--arrow-block-size)) / var(--box-width) var(--box-height) linear-gradient(135deg, var(--primary-color) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
+              var(--arrow-block-size) calc(var(--arrow-height) + var(--arrow-block-size)) / var(--box-width) var(--box-height) linear-gradient(-45deg, var(--color2) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
+              calc(var(--arrow-block-size) + var(--arrow-space)) calc(var(--arrow-height) + var(--arrow-block-size)) / var(--box-width) var(--box-height) linear-gradient(45deg, var(--color3) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
+              calc(var(--box-width) / 2) calc(var(--arrow-height) + var(--arrow-block-size)) / var(--box-width) var(--box-height) linear-gradient(-135deg, var(--color3) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
+              0 calc(var(--arrow-height) + var(--arrow-block-size)) / var(--box-width) var(--box-height) linear-gradient(135deg, var(--color2) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
               
-              var(--arrow-block-size) var(--box-height) / var(--box-width) var(--box-height) linear-gradient(-45deg, var(--secondary-color) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
-              calc(var(--arrow-block-size) + var(--arrow-space)) var(--box-height) / var(--box-width) var(--box-height) linear-gradient(45deg, var(--secondary-color) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
-              calc(var(--box-width) / 2) 0 / var(--box-width) var(--box-height) linear-gradient(-135deg, var(--secondary-color) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
-              0 0 / var(--box-width) var(--box-height) linear-gradient(135deg, var(--secondary-color) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
+              var(--arrow-block-size) var(--box-height) / var(--box-width) var(--box-height) linear-gradient(-45deg, var(--color6) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
+              calc(var(--arrow-block-size) + var(--arrow-space)) var(--box-height) / var(--box-width) var(--box-height) linear-gradient(45deg, var(--color7) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
+              calc(var(--box-width) / 2) 0 / var(--box-width) var(--box-height) linear-gradient(-135deg, var(--color7) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
+              0 0 / var(--box-width) var(--box-height) linear-gradient(135deg, var(--color6) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
               
-              var(--arrow-block-size) var(--arrow-block-size) / var(--box-width) var(--box-height) linear-gradient(-45deg, var(--secondary-color) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
-              calc(var(--arrow-block-size) + var(--arrow-space)) var(--arrow-block-size) / var(--box-width) var(--box-height) linear-gradient(45deg, var(--secondary-color) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
-              calc(var(--box-width) / 2) var(--arrow-block-size) / var(--box-width) var(--box-height) linear-gradient(-135deg, var(--secondary-color) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
-              0 var(--arrow-block-size) / var(--box-width) var(--box-height) linear-gradient(135deg, var(--secondary-color) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
+              var(--arrow-block-size) var(--arrow-block-size) / var(--box-width) var(--box-height) linear-gradient(-45deg, var(--color6) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
+              calc(var(--arrow-block-size) + var(--arrow-space)) var(--arrow-block-size) / var(--box-width) var(--box-height) linear-gradient(45deg, var(--color7) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
+              calc(var(--box-width) / 2) var(--arrow-block-size) / var(--box-width) var(--box-height) linear-gradient(-135deg, var(--color7) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
+              0 var(--arrow-block-size) / var(--box-width) var(--box-height) linear-gradient(135deg, var(--color6) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
               
-              calc(var(--box-width) / 2 + var(--arrow-block-size)) var(--arrow-height) / var(--box-width) var(--box-height) linear-gradient(-45deg, var(--secondary-color) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
-              calc(var(--box-width) / 2 + var(--arrow-block-size) + var(--arrow-space)) var(--arrow-height) / var(--box-width) var(--box-height) linear-gradient(45deg, var(--secondary-color) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
-              var(--box-width) var(--arrow-height) / var(--box-width) var(--box-height) linear-gradient(-135deg, var(--secondary-color) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
-              calc(var(--box-width) / 2) var(--arrow-height) / var(--box-width) var(--box-height) linear-gradient(135deg, var(--secondary-color) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
+              calc(var(--box-width) / 2 + var(--arrow-block-size)) var(--arrow-height) / var(--box-width) var(--box-height) linear-gradient(-45deg, var(--color4) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
+              calc(var(--box-width) / 2 + var(--arrow-block-size) + var(--arrow-space)) var(--arrow-height) / var(--box-width) var(--box-height) linear-gradient(45deg, var(--color1) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
+              var(--box-width) var(--arrow-height) / var(--box-width) var(--box-height) linear-gradient(-135deg, var(--color1) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
+              calc(var(--box-width) / 2) var(--arrow-height) / var(--box-width) var(--box-height) linear-gradient(135deg, var(--color4) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
               
-              calc(var(--box-width) / 2 + var(--arrow-block-size)) calc(var(--arrow-height) + var(--arrow-block-size)) / var(--box-width) var(--box-height) linear-gradient(-45deg, var(--secondary-color) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
-              calc(var(--box-width) / 2 + var(--arrow-block-size) + var(--arrow-space)) calc(var(--arrow-height) + var(--arrow-block-size)) / var(--box-width) var(--box-height) linear-gradient(45deg, var(--secondary-color) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
-              var(--box-width) calc(var(--arrow-height) + var(--arrow-block-size)) / var(--box-width) var(--box-height) linear-gradient(-135deg, var(--secondary-color) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
-              calc(var(--box-width) / 2) calc(var(--arrow-height) + var(--arrow-block-size)) / var(--box-width) var(--box-height) linear-gradient(135deg, var(--secondary-color) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
+              calc(var(--box-width) / 2 + var(--arrow-block-size)) calc(var(--arrow-height) + var(--arrow-block-size)) / var(--box-width) var(--box-height) linear-gradient(-45deg, var(--color4) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
+              calc(var(--box-width) / 2 + var(--arrow-block-size) + var(--arrow-space)) calc(var(--arrow-height) + var(--arrow-block-size)) / var(--box-width) var(--box-height) linear-gradient(45deg, var(--color1) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
+              var(--box-width) calc(var(--arrow-height) + var(--arrow-block-size)) / var(--box-width) var(--box-height) linear-gradient(-135deg, var(--color1) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
+              calc(var(--box-width) / 2) calc(var(--arrow-height) + var(--arrow-block-size)) / var(--box-width) var(--box-height) linear-gradient(135deg, var(--color4) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
               
-              calc(var(--box-width) / 2 + var(--arrow-block-size)) var(--box-height) / var(--box-width) var(--box-height) linear-gradient(-45deg, var(--primary-color) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
-              calc(var(--box-width) / 2 + var(--arrow-block-size) + var(--arrow-space)) var(--box-height) / var(--box-width) var(--box-height) linear-gradient(45deg, var(--primary-color) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
-              var(--box-width) 0 / var(--box-width) var(--box-height) linear-gradient(-135deg, var(--primary-color) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
-              calc(var(--box-width) / 2) 0 / var(--box-width) var(--box-height) linear-gradient(135deg, var(--primary-color) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
+              calc(var(--box-width) / 2 + var(--arrow-block-size)) var(--box-height) / var(--box-width) var(--box-height) linear-gradient(-45deg, var(--color8) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
+              calc(var(--box-width) / 2 + var(--arrow-block-size) + var(--arrow-space)) var(--box-height) / var(--box-width) var(--box-height) linear-gradient(45deg, var(--color5) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
+              var(--box-width) 0 / var(--box-width) var(--box-height) linear-gradient(-135deg, var(--color5) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
+              calc(var(--box-width) / 2) 0 / var(--box-width) var(--box-height) linear-gradient(135deg, var(--color8) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
               
-              calc(var(--box-width) / 2 + var(--arrow-block-size)) var(--arrow-block-size) / var(--box-width) var(--box-height) linear-gradient(-45deg, var(--primary-color) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
-              calc(var(--box-width) / 2 + var(--arrow-block-size) + var(--arrow-space)) var(--arrow-block-size) / var(--box-width) var(--box-height) linear-gradient(45deg, var(--primary-color) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
-              var(--box-width) var(--arrow-block-size) / var(--box-width) var(--box-height) linear-gradient(-135deg, var(--primary-color) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
-              calc(var(--box-width) / 2) var(--arrow-block-size) / var(--box-width) var(--box-height) linear-gradient(135deg, var(--primary-color) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
+              calc(var(--box-width) / 2 + var(--arrow-block-size)) var(--arrow-block-size) / var(--box-width) var(--box-height) linear-gradient(-45deg, var(--color8) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
+              calc(var(--box-width) / 2 + var(--arrow-block-size) + var(--arrow-space)) var(--arrow-block-size) / var(--box-width) var(--box-height) linear-gradient(45deg, var(--color5) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
+              var(--box-width) var(--arrow-block-size) / var(--box-width) var(--box-height) linear-gradient(-135deg, var(--color5) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
+              calc(var(--box-width) / 2) var(--arrow-block-size) / var(--box-width) var(--box-height) linear-gradient(135deg, var(--color8) 0 calc(var(--arrow-block-size) / 2 * var(--sqrt2)), transparent 0),
 
               calc(var(--box-width) / 2) var(--arrow-block-size) / var(--box-width) var(--box-height) linear-gradient(45deg, var(--secondary-color) 0 25%, transparent 0),
               0 calc(var(--arrow-height) + var(--arrow-block-size)) / var(--box-width) var(--box-height) linear-gradient(45deg, transparent 0 75%, var(--secondary-color) 0),
@@ -696,12 +970,17 @@ const App = () => {
       <Uroko/>
       <Diamond/>
       <ArrowUp/>
+      <ArrowDown/>
       <Arrow/>
       <Arrow2/>
       <Arrow3/>
+      <Arrow3Rev/>
       <Arrow4/>
+      <Arrow4Rev/>
       <Arrow5/>
+      <Arrow5Rev/>
       <Yagasuri/>
+      <YagasuriRev/>
       <Japan/>
       <Circle/>
       <Circles/>
