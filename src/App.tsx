@@ -932,17 +932,9 @@ const Wave = styled(Example)`
               var(--secondary-color);
 `;
 
-const BaseFooter = styled.footer`
-  position: absolute;
-  bottom: 0;
-  right: 0;
-`;
-
 const Footer: React.FC<{}> = () => {
   return (
-    <BaseFooter>
-      <a href="https://github.com/hanachin/textures">Source Code</a>
-    </BaseFooter>
+    <a href="https://github.com/hanachin/textures">Source Code</a>
   )
 }
 
@@ -955,6 +947,7 @@ const AppRoot = styled.div`
   grid-template-rows: repeat(auto-fill, 256px);
   grid-gap: 8px;
   padding: 8px;
+  margin-bottom: 1rem;
 `;
 
 const App = () => {
