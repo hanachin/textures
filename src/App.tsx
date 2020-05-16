@@ -12,6 +12,8 @@ const Example = styled.div`
   --width-primary:   16px;
   --width-secondary: 16px;
 
+  width: 256px;
+  height: 256px;
   border-radius: 4px;
   box-shadow: rgba(0, 0, 0, .15) 0 0 2px;
 `;
