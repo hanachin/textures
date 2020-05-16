@@ -426,6 +426,237 @@ const Shippou2 = styled(Example)`
               )
               var(--secondary-color);
 `;
+const Scalelike = styled(Example)`
+  --circle-size: 24px;
+  --circle-width: 1px;
+  --circle-distance: 48px;
+  background: 0 0 / var(--circle-size) var(--circle-size) radial-gradient(
+                circle at top left,
+                transparent 0,
+                transparent calc(var(--circle-size) - var(--circle-width)),
+                var(--primary-color) 0,
+                var(--primary-color) var(--circle-size),
+                transparent var(--circle-size),
+                transparent
+              ),
+              var(--secondary-color);
+`;
+const Scalelike2 = styled(Example)`
+  --circle-size: 24px;
+  --circle-width: 1px;
+  --circle-distance: 48px;
+  background: 0 0 / var(--circle-distance) var(--circle-size) radial-gradient(
+                circle at top center,
+                transparent 0,
+                transparent calc(var(--circle-size) - var(--circle-width)),
+                var(--primary-color) 0,
+                var(--primary-color) var(--circle-size),
+                transparent var(--circle-size),
+                transparent
+              ),
+              var(--secondary-color);
+`;
+const Scalelike3 = styled(Example)`
+  --circle-size: 24px;
+  --circle-width: 1px;
+  --circle-distance: 48px;
+  background: 0 0 / var(--circle-distance) calc(2 * var(--circle-size)) radial-gradient(
+                circle at top center,
+                transparent 0,
+                transparent calc(var(--circle-size) - var(--circle-width)),
+                var(--primary-color) 0,
+                var(--primary-color) var(--circle-size),
+                transparent var(--circle-size),
+                transparent
+              ),
+              var(--circle-size) var(--circle-size) / var(--circle-distance) calc(2 * var(--circle-size)) radial-gradient(
+                circle at top center,
+                transparent 0,
+                transparent calc(var(--circle-size) - var(--circle-width)),
+                var(--primary-color) 0,
+                var(--primary-color) var(--circle-size),
+                transparent var(--circle-size),
+                transparent
+              ),
+              var(--secondary-color);
+`;
+const HalfCircles = styled(Example)`
+  --circle-size: 12px;
+  --circle-width: 10px;
+  --circle-distance: 96px;
+  background: 0 0 / var(--circle-distance) var(--circle-distance)
+              repeating-radial-gradient(
+                circle at bottom center,
+                var(--primary-color) 0,
+                var(--primary-color) 10px,
+                transparent 0px,
+                transparent 15px,
+                var(--primary-color) 15px,
+                var(--primary-color) 25px,
+                transparent 0px,
+                transparent 35px,
+                var(--primary-color) 35px,
+                var(--primary-color) 45px,
+                transparent 0,
+                transparent 128px,
+                transparent
+              )
+              var(--secondary-color);
+`;
+const HalfCircles2 = styled(Example)`
+  --circle-size: 12px;
+  --circle-width: 10px;
+  --circle-distance: 96px;
+  background: 0 0 / var(--circle-distance) var(--circle-distance)
+              repeating-radial-gradient(
+                circle at bottom center,
+                var(--primary-color) 0,
+                var(--primary-color) 10px,
+                transparent 0px,
+                transparent 15px,
+                var(--primary-color) 15px,
+                var(--primary-color) 25px,
+                transparent 0px,
+                transparent 35px,
+                var(--primary-color) 35px,
+                var(--primary-color) 45px,
+                transparent 0,
+                transparent 128px,
+                transparent
+              ),
+              calc(var(--circle-distance) / 2) calc(var(--circle-distance) / 2) / var(--circle-distance) var(--circle-distance)
+              repeating-radial-gradient(
+                circle at bottom center,
+                var(--primary-color) 0,
+                var(--primary-color) 10px,
+                transparent 0px,
+                transparent 15px,
+                var(--primary-color) 15px,
+                var(--primary-color) 25px,
+                transparent 0px,
+                transparent 35px,
+                var(--primary-color) 35px,
+                var(--primary-color) 45px,
+                transparent 0,
+                transparent 128px,
+                transparent
+              ),
+              var(--secondary-color);
+`;
+const Seigaiha = styled(Example)`
+  --circle-width: 5px;
+  --circle-radius: 40px;
+  --circle-diameter: calc(var(--circle-radius) * 2);
+  background: 0 0 / var(--circle-diameter) var(--circle-radius)
+              radial-gradient(
+                circle at 50% 150%,
+                var(--primary-color) 0 var(--circle-width),
+                var(--secondary-color) 0 calc(var(--circle-radius) - 7 * var(--circle-width)),
+                var(--primary-color) calc(var(--circle-radius) - 8 * var(--circle-width)) calc(var(--circle-radius) - 6 * var(--circle-width)),
+                var(--secondary-color) 0 calc(var(--circle-radius) - 5 * var(--circle-width)),
+                var(--primary-color) calc(var(--circle-radius) - 5 * var(--circle-width)) calc(var(--circle-radius) - 4 * var(--circle-width)),
+                var(--secondary-color) 0 calc(var(--circle-radius) - 3 * var(--circle-width)),
+                var(--primary-color) calc(var(--circle-radius) - 3 * var(--circle-width)) calc(var(--circle-radius) - 2 * var(--circle-width)),
+                var(--secondary-color) 0 calc(var(--circle-radius) - var(--circle-width)),
+                var(--primary-color) calc(var(--circle-radius) - var(--circle-width)) var(--circle-radius),
+                transparent 0 calc(2 * var(--circle-diameter))
+              ),
+              0 0 / var(--circle-diameter) var(--circle-radius)
+              repeating-radial-gradient(
+                circle at 0% 100%,
+                var(--primary-color) 0 var(--circle-width),
+                var(--secondary-color) 0 calc(var(--circle-radius) - 7 * var(--circle-width)),
+                var(--primary-color) calc(var(--circle-radius) - 8 * var(--circle-width)) calc(var(--circle-radius) - 6 * var(--circle-width)),
+                var(--secondary-color) 0 calc(var(--circle-radius) - 5 * var(--circle-width)),
+                var(--primary-color) calc(var(--circle-radius) - 5 * var(--circle-width)) calc(var(--circle-radius) - 4 * var(--circle-width)),
+                var(--secondary-color) 0 calc(var(--circle-radius) - 3 * var(--circle-width)),
+                var(--primary-color) calc(var(--circle-radius) - 3 * var(--circle-width)) calc(var(--circle-radius) - 2 * var(--circle-width)),
+                var(--secondary-color) 0 calc(var(--circle-radius) - var(--circle-width)),
+                var(--primary-color) calc(var(--circle-radius) - var(--circle-width)) var(--circle-radius),
+                transparent 0 calc(2 * var(--circle-diameter))
+              ),
+              0 0 / var(--circle-diameter) var(--circle-radius)
+              repeating-radial-gradient(
+                circle at 100% 100%,
+                var(--primary-color) 0 var(--circle-width),
+                var(--secondary-color) 0 calc(var(--circle-radius) - 7 * var(--circle-width)),
+                var(--primary-color) calc(var(--circle-radius) - 8 * var(--circle-width)) calc(var(--circle-radius) - 6 * var(--circle-width)),
+                var(--secondary-color) 0 calc(var(--circle-radius) - 5 * var(--circle-width)),
+                var(--primary-color) calc(var(--circle-radius) - 5 * var(--circle-width)) calc(var(--circle-radius) - 4 * var(--circle-width)),
+                var(--secondary-color) 0 calc(var(--circle-radius) - 3 * var(--circle-width)),
+                var(--primary-color) calc(var(--circle-radius) - 3 * var(--circle-width)) calc(var(--circle-radius) - 2 * var(--circle-width)),
+                var(--secondary-color) 0 calc(var(--circle-radius) - var(--circle-width)),
+                var(--primary-color) calc(var(--circle-radius) - var(--circle-width)) var(--circle-radius),
+                transparent 0 calc(2 * var(--circle-diameter))
+              ),
+              0 0 / var(--circle-diameter) var(--circle-radius)
+              repeating-radial-gradient(
+                circle at 50% 50%,
+                var(--primary-color) 0 var(--circle-width),
+                var(--secondary-color) 0 calc(var(--circle-radius) - 7 * var(--circle-width)),
+                var(--primary-color) calc(var(--circle-radius) - 8 * var(--circle-width)) calc(var(--circle-radius) - 6 * var(--circle-width)),
+                var(--secondary-color) 0 calc(var(--circle-radius) - 5 * var(--circle-width)),
+                var(--primary-color) calc(var(--circle-radius) - 5 * var(--circle-width)) calc(var(--circle-radius) - 4 * var(--circle-width)),
+                var(--secondary-color) 0 calc(var(--circle-radius) - 3 * var(--circle-width)),
+                var(--primary-color) calc(var(--circle-radius) - 3 * var(--circle-width)) calc(var(--circle-radius) - 2 * var(--circle-width)),
+                var(--secondary-color) 0 calc(var(--circle-radius) - var(--circle-width)),
+                var(--primary-color) calc(var(--circle-radius) - var(--circle-width)) var(--circle-radius),
+                transparent 0 calc(2 * var(--circle-diameter))
+              ),
+              0 0 / var(--circle-diameter) var(--circle-radius)
+              repeating-radial-gradient(
+                circle at 0% 0%,
+                var(--primary-color) 0 var(--circle-width),
+                var(--secondary-color) 0 calc(var(--circle-radius) - 7 * var(--circle-width)),
+                var(--primary-color) calc(var(--circle-radius) - 8 * var(--circle-width)) calc(var(--circle-radius) - 6 * var(--circle-width)),
+                var(--secondary-color) 0 calc(var(--circle-radius) - 5 * var(--circle-width)),
+                var(--primary-color) calc(var(--circle-radius) - 5 * var(--circle-width)) calc(var(--circle-radius) - 4 * var(--circle-width)),
+                var(--secondary-color) 0 calc(var(--circle-radius) - 3 * var(--circle-width)),
+                var(--primary-color) calc(var(--circle-radius) - 3 * var(--circle-width)) calc(var(--circle-radius) - 2 * var(--circle-width)),
+                var(--secondary-color) 0 calc(var(--circle-radius) - var(--circle-width)),
+                var(--primary-color) calc(var(--circle-radius) - var(--circle-width)) var(--circle-radius),
+                transparent 0 calc(2 * var(--circle-diameter))
+              ),
+              0 0 / var(--circle-diameter) var(--circle-radius)
+              repeating-radial-gradient(
+                circle at 100% 0%,
+                var(--primary-color) 0 var(--circle-width),
+                var(--secondary-color) 0 calc(var(--circle-radius) - 7 * var(--circle-width)),
+                var(--primary-color) calc(var(--circle-radius) - 8 * var(--circle-width)) calc(var(--circle-radius) - 6 * var(--circle-width)),
+                var(--secondary-color) 0 calc(var(--circle-radius) - 5 * var(--circle-width)),
+                var(--primary-color) calc(var(--circle-radius) - 5 * var(--circle-width)) calc(var(--circle-radius) - 4 * var(--circle-width)),
+                var(--secondary-color) 0 calc(var(--circle-radius) - 3 * var(--circle-width)),
+                var(--primary-color) calc(var(--circle-radius) - 3 * var(--circle-width)) calc(var(--circle-radius) - 2 * var(--circle-width)),
+                var(--secondary-color) 0 calc(var(--circle-radius) - var(--circle-width)),
+                var(--primary-color) calc(var(--circle-radius) - var(--circle-width)) var(--circle-radius),
+                transparent 0 calc(2 * var(--circle-diameter))
+              )
+`;
+const Wave = styled(Example)`
+  --circle-size: 24px;
+  --circle-width: 10px;
+  --circle-distance-y: 48px;
+  --circle-distance-x: calc(2 * (2 * var(--circle-size) - var(--circle-width)));
+  background: 0 0 / var(--circle-distance-x) var(--circle-distance-y) radial-gradient(
+                circle at top center,
+                transparent 0,
+                transparent calc(var(--circle-size) - var(--circle-width)),
+                var(--primary-color) 0,
+                var(--primary-color) var(--circle-size),
+                transparent var(--circle-size),
+                transparent
+              ),
+              calc(var(--circle-distance-x) / 2) var(--circle-distance-y) / var(--circle-distance-x) var(--circle-distance-y) radial-gradient(
+                circle at bottom center,
+                transparent 0,
+                transparent calc(var(--circle-size) - var(--circle-width)),
+                var(--primary-color) 0,
+                var(--primary-color) var(--circle-size),
+                transparent var(--circle-size),
+                transparent
+              ),
+              var(--secondary-color);
+`;
 
 const BaseFooter = styled.footer`
   position: absolute;
@@ -478,6 +709,13 @@ const App = () => {
       <PolkaDot/>
       <Shippou/>
       <Shippou2/>
+      <Scalelike/>
+      <Scalelike2/>
+      <Scalelike3/>
+      <HalfCircles/>
+      <HalfCircles2/>
+      <Seigaiha/>
+      <Wave/>
       <Footer/>
     </AppRoot>
   );
