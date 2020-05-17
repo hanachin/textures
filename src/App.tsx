@@ -2,10 +2,6 @@ import React from 'react';
 import styled from 'styled-components';
 
 const Example = styled.div`
-  --accent-color: #ecdf2b;
-  --primary-color: #f20000;
-  --secondary-color: #ffffff;
-
   --arrow-block-size: 16px;
   --arrow-space:      4px;
   --size: 16px;
@@ -142,6 +138,39 @@ const Diamond = styled(Example)`
               linear-gradient(
                 -135deg,
                 var(--primary-color) 0 var(--size), transparent 0
+              ),
+              var(--secondary-color);
+`;
+const Diamond2 = styled(Example)`
+  --width: 100px;
+  --height: 100px;
+  --color1: var(--primary-color);
+  --color2: var(--primary-color);
+
+  background: 0 0 / var(--width) var(--height)
+              linear-gradient(
+                60deg,
+                var(--color1) var(--size),
+                transparent 0
+              ),
+              0 0 / var(--width) var(--height)
+              linear-gradient(
+                120deg,
+                var(--color1) var(--size),
+                transparent 0
+              ),
+
+              0 0 / var(--width) var(--height)
+              linear-gradient(
+                -60deg,
+                var(--color2) var(--size),
+                transparent 0
+              ),
+              0 0 / var(--width) var(--height)
+              linear-gradient(
+                -120deg,
+                var(--color2) var(--size),
+                transparent 0
               ),
               var(--secondary-color);
 `;
@@ -2522,64 +2551,407 @@ const Wave = styled(Example)`
               ),
               var(--secondary-color);
 `;
+const Flower = styled(Example)`
+  --width: 65px;
+  --height: 65px;
+  --border-width: 2px;
+  --color1: var(--primary-color);
+  --color2: var(--primary-color);
+  --color1: var(--primary-color);
+  --color2: var(--primary-color);
+  --color3: var(--primary-color);
+  --color4: var(--primary-color);
+  background: calc(var(--width) / 2) calc(var(--height) / 2) / var(--width) var(--height)
+              linear-gradient(
+                30deg,
+                var(--color4) var(--size),
+                transparent 0
+              ),
+              calc(var(--width) / 2) calc(var(--height) / 2) / var(--width) var(--height)
+              linear-gradient(
+                -30deg,
+                var(--color4) var(--size),
+                transparent 0
+              ),
+              0 0 / var(--width) var(--height)
+              linear-gradient(
+                60deg,
+                var(--color1) var(--size),
+                transparent 0
+              ),
+              0 0 / var(--width) var(--height)
+              linear-gradient(
+                120deg,
+                var(--color1) var(--size),
+                transparent 0
+              ),
+              0 0 / var(--width) var(--height)
+              linear-gradient(
+                -60deg,
+                var(--color2) var(--size),
+                transparent 0
+              ),
+              0 0 / var(--width) var(--height)
+              linear-gradient(
+                -120deg,
+                var(--color2) var(--size),
+                transparent 0
+              ),
+              calc(var(--width) / 2) calc(var(--height) / 2) / var(--width) var(--height)
+              linear-gradient(
+                150deg,
+                var(--color3) var(--size),
+                transparent 0
+              ),
+              calc(var(--width) / 2) calc(var(--height) / 2) / var(--width) var(--height)
+              linear-gradient(
+                -150deg,
+                var(--color3) var(--size),
+                transparent 0
+              ),
+              var(--secondary-color);
+`;
 
-const Footer: React.FC<{}> = () => {
-  return (
-    <a href="https://github.com/hanachin/textures">Source Code</a>
-  )
-}
+const Prism = styled(Example)`
+  --sqrt3: 1.73205080757;
+  --base: 16px;
+  --height: calc(var(--base) * 4);
+  --width: calc(var(--base) * var(--sqrt3) * 4);
+  --color1: #f0f;
+  --color2: #f00;
+  --color3: #0f0;
+  --color4: #00f;
+  --color5: #0ff;
+  --color6: #ff0;
+  background: 0 0 / var(--width) var(--height)
+              linear-gradient(
+                60deg,
+                var(--color1) var(--base),
+                transparent 0
+              ),
+              0 0 / var(--width) var(--height)
+              linear-gradient(
+                120deg,
+                var(--color1) var(--base),
+                transparent 0
+              ),
 
-const AppRoot = styled.div`
-  box-sizing: border-box;
-  background: #dcdddd;
+              0 0 / var(--width) var(--height)
+              linear-gradient(
+                -60deg,
+                var(--color2) var(--base),
+                transparent 0
+              ),
+              0 0 / var(--width) var(--height)
+              linear-gradient(
+                -120deg,
+                var(--color2) var(--base),
+                transparent 0
+              ),
+
+              var(--width) 0 / var(--width) var(--height)
+              linear-gradient(
+                150deg,
+                var(--color3) calc(var(--base) * var(--sqrt3)),
+                transparent 0
+              ),
+              var(--width) 0 / var(--width) var(--height)
+              linear-gradient(
+                -150deg,
+                var(--color4) calc(var(--base) * var(--sqrt3)),
+                transparent 0
+              ),
+
+              0 0 / var(--width) var(--height)
+              linear-gradient(
+                30deg,
+                var(--color5) calc(var(--base) * var(--sqrt3)),
+                transparent 0
+              ),
+              0 0 / var(--width) var(--height)
+              linear-gradient(
+                -30deg,
+                var(--color6) calc(var(--base) * var(--sqrt3)),
+                transparent 0
+              ),
+              calc(var(--width) / 2) calc(var(--height) / 2) / var(--width) var(--height)
+              linear-gradient(
+                60deg,
+                var(--color1) var(--base),
+                transparent 0
+              ),
+              calc(var(--width) / 2) calc(var(--height) / 2) / var(--width) var(--height)
+              linear-gradient(
+                120deg,
+                var(--color1) var(--base),
+                transparent 0
+              ),
+
+              calc(var(--width) / 2) calc(var(--height) / 2) / var(--width) var(--height)
+              linear-gradient(
+                -60deg,
+                var(--color2) var(--base),
+                transparent 0
+              ),
+              calc(var(--width) / 2) calc(var(--height) / 2) / var(--width) var(--height)
+              linear-gradient(
+                -120deg,
+                var(--color2) var(--base),
+                transparent 0
+              ),
+
+              calc(var(--width) / 2) calc(var(--height) / 2) / var(--width) var(--height)
+              linear-gradient(
+                150deg,
+                var(--color3) calc(var(--base) * var(--sqrt3)),
+                transparent 0
+              ),
+              calc(var(--width) / 2) calc(var(--height) / 2) / var(--width) var(--height)
+              linear-gradient(
+                -150deg,
+                var(--color4) calc(var(--base) * var(--sqrt3)),
+                transparent 0
+              ),
+
+              calc(var(--width) / 2) calc(var(--height) / 2) / var(--width) var(--height)
+              linear-gradient(
+                30deg,
+                var(--color5) calc(var(--base) * var(--sqrt3)),
+                transparent 0
+              ),
+              calc(var(--width) / 2) calc(var(--height) / 2) / var(--width) var(--height)
+              linear-gradient(
+                -30deg,
+                var(--color6) calc(var(--base) * var(--sqrt3)),
+                transparent 0
+              ),
+              var(--secondary-color);
+`;
+const Weed = styled(Example)`
+  --sqrt3: 1.73205080757;
+  --base: 16px;
+  --height: calc(var(--base) * 4 + var(--border-width) * 2);
+  --width: calc(var(--base) * var(--sqrt3) * 4 + var(--border-width) * 4);
+  --border-width: 1px;
+
+  --border-color: var(--secondary-color);
+  --color1: var(--primary-color);
+  --color2: var(--primary-color);
+  --color3: var(--primary-color);
+  --color4: var(--primary-color);
+  --color5: var(--primary-color);
+  --color6: var(--primary-color);
+  background: 0 0 / var(--width) var(--height)
+              linear-gradient(
+                90deg,
+                var(--border-color) 0 calc(var(--border-width) * 2),
+                transparent calc(var(--border-width) * 2) var(--height)
+              ),
+              calc(var(--width) / 2 - var(--border-width)) 0 / var(--width) var(--height)
+              linear-gradient(
+                90deg,
+                var(--border-color) 0 calc(var(--border-width) * 2),
+                transparent calc(var(--border-width) * 2) var(--height)
+              ),
+              0 0 / var(--width) var(--height)
+              linear-gradient(
+                60deg,
+                var(--color1) calc(var(--base) - var(--border-width)),
+                var(--border-color) 0 calc(var(--base) + var(--border-width)),
+                transparent 0
+              ),
+              0 0 / var(--width) var(--height)
+              linear-gradient(
+                120deg,
+                var(--color1) calc(var(--base) - var(--border-width)),
+                var(--border-color) 0 calc(var(--base) + var(--border-width)),
+                transparent 0
+              ),
+              0 0 / var(--width) var(--height)
+              linear-gradient(
+                -60deg,
+                var(--color2) calc(var(--base) - var(--border-width)),
+                var(--border-color) 0 calc(var(--base) + var(--border-width)),
+                transparent 0
+              ),
+              0 0 / var(--width) var(--height)
+              linear-gradient(
+                -120deg,
+                var(--color2) calc(var(--base) - var(--border-width)),
+                var(--border-color) 0 calc(var(--base) + var(--border-width)),
+                transparent 0
+              ),
+              0 calc(var(--border-width) * -1) / var(--width) var(--height)
+              linear-gradient(
+                var(--border-color) 0 calc(var(--border-width) * 2),
+                transparent 0
+              ),
+              var(--width) 0 / var(--width) var(--height)
+              linear-gradient(
+                150deg,
+                var(--color3) calc(var(--base) * var(--sqrt3)),
+                transparent 0
+              ),
+              var(--width) 0 / var(--width) var(--height)
+              linear-gradient(
+                -150deg,
+                var(--color4) calc(var(--base) * var(--sqrt3)),
+                transparent 0
+              ),
+              0 0 / var(--width) var(--height)
+              linear-gradient(
+                30deg,
+                var(--color5) calc(var(--base) * var(--sqrt3)),
+                transparent 0
+              ),
+              0 0 / var(--width) var(--height)
+              linear-gradient(
+                -30deg,
+                var(--color6) calc(var(--base) * var(--sqrt3)),
+                transparent 0
+              ),
+              
+              calc(var(--width) / 2) calc(var(--height) / 2) / var(--width) var(--height)
+              linear-gradient(
+                60deg,
+                var(--color1) calc(var(--base) - var(--border-width)),
+                var(--border-color) 0 calc(var(--base) + var(--border-width)),
+                transparent 0
+              ),
+              calc(var(--width) / 2) calc(var(--height) / 2) / var(--width) var(--height)
+              linear-gradient(
+                120deg,
+                var(--color1) calc(var(--base) - var(--border-width)),
+                var(--border-color) 0 calc(var(--base) + var(--border-width)),
+                transparent 0
+              ),
+              calc(var(--width) / 2) calc(var(--height) / 2) / var(--width) var(--height)
+              linear-gradient(
+                -60deg,
+                var(--color2) calc(var(--base) - var(--border-width)),
+                var(--border-color) 0 calc(var(--base) + var(--border-width)),
+                transparent 0
+              ),
+              calc(var(--width) / 2) calc(var(--height) / 2) / var(--width) var(--height)
+              linear-gradient(
+                -120deg,
+                var(--color2) calc(var(--base) - var(--border-width)),
+                var(--border-color) 0 calc(var(--base) + var(--border-width)),
+                transparent 0
+              ),
+              0 calc(var(--height) / 2 + var(--border-width) * -1) / var(--width) var(--height)
+              linear-gradient(
+                var(--border-color) 0 calc(var(--border-width) * 2),
+                transparent 0
+              ),
+              calc(var(--width) * 1.5) calc(var(--height) / 2) / var(--width) var(--height)
+              linear-gradient(
+                150deg,
+                var(--color3) calc(var(--base) * var(--sqrt3)),
+                transparent 0
+              ),
+              calc(var(--width) * 1.5) calc(var(--height) / 2) / var(--width) var(--height)
+              linear-gradient(
+                -150deg,
+                var(--color4) calc(var(--base) * var(--sqrt3)),
+                transparent 0
+              ),
+              calc(var(--width) / 2) calc(var(--height) / 2) / var(--width) var(--height)
+              linear-gradient(
+                30deg,
+                var(--color5) calc(var(--base) * var(--sqrt3)),
+                transparent 0
+              ),
+              calc(var(--width) / 2) calc(var(--height) / 2) / var(--width) var(--height)
+              linear-gradient(
+                -30deg,
+                var(--color6) calc(var(--base) * var(--sqrt3)),
+                transparent 0
+              ),
+              var(--secondary-color);
+`;
+
+const Header = styled.header`
+  text-align: center;
+  width: 100vw;
+  height: 6rem;
+  font-size: 4rem;
+  & > a, & > a:visited {
+    color: var(--primary-color);
+    text-decoration: none;
+  }
+  & > a:hover {
+    color: var(--secondary-color);
+    text-decoration: underline;
+  }
+`;
+
+const Gallary = styled.div`
   min-height: 100vh;
   display: grid;
   grid-template-columns: repeat(auto-fill, 256px);
   grid-template-rows: repeat(auto-fill, 256px);
   grid-gap: 8px;
   padding: 8px;
+`;
+
+const AppRoot = styled.div`
+  --accent-color: #ecdf2b;
+  --primary-color: #f20000;
+  --secondary-color: #ffffff;
+
+  box-sizing: border-box;
+  background: #dcdddd;
   margin-bottom: 1rem;
 `;
 
 const App = () => {
   return (
     <AppRoot>
-      <HorizontalBorder/>
-      <VerticalBorder/>
-      <RightDiagonalLine/>
-      <LeftDiagonalLine/>
-      <Check/>
-      <DiagonalCheck/>
-      <Ichimatsu/>
-      <Uroko/>
-      <Diamond/>
-      <ArrowUp/>
-      <ArrowDown/>
-      <Arrow/>
-      <Arrow2/>
-      <Arrow3/>
-      <Arrow3Rev/>
-      <Arrow4/>
-      <Arrow4Rev/>
-      <Arrow5/>
-      <Arrow5Rev/>
-      <Yagasuri/>
-      <YagasuriRev/>
-      <Japan/>
-      <Circle/>
-      <Circles/>
-      <Baumkuchen/>
-      <PolkaDot/>
-      <Shippou/>
-      <Shippou2/>
-      <Scalelike/>
-      <Scalelike2/>
-      <Scalelike3/>
-      <HalfCircles/>
-      <HalfCircles2/>
-      <Seigaiha/>
-      <Wave/>
-      <Footer/>
+      <Header>
+        <a href="https://github.com/hanachin/textures">hanachin/textures</a>
+      </Header>
+      <Gallary>
+        <HorizontalBorder/>
+        <VerticalBorder/>
+        <RightDiagonalLine/>
+        <LeftDiagonalLine/>
+        <Check/>
+        <DiagonalCheck/>
+        <Ichimatsu/>
+        <Uroko/>
+        <Diamond/>
+        <Diamond2/>
+        <ArrowUp/>
+        <ArrowDown/>
+        <Arrow/>
+        <Arrow2/>
+        <Arrow3/>
+        <Arrow3Rev/>
+        <Arrow4/>
+        <Arrow4Rev/>
+        <Arrow5/>
+        <Arrow5Rev/>
+        <Yagasuri/>
+        <YagasuriRev/>
+        <Japan/>
+        <Circle/>
+        <Circles/>
+        <Baumkuchen/>
+        <PolkaDot/>
+        <Shippou/>
+        <Shippou2/>
+        <Scalelike/>
+        <Scalelike2/>
+        <Scalelike3/>
+        <HalfCircles/>
+        <HalfCircles2/>
+        <Seigaiha/>
+        <Wave/>
+        <Flower/>
+        <Prism/>
+        <Weed/>
+      </Gallary>
     </AppRoot>
   );
 }
