@@ -2741,7 +2741,7 @@ const Weed = styled(Example)`
   --color4: var(--primary-color);
   --color5: var(--primary-color);
   --color6: var(--primary-color);
-  background: 0 0 / var(--width) var(--height)
+  background: calc(-1 * var(--border-width)) 0 / var(--width) var(--height)
               linear-gradient(
                 90deg,
                 var(--border-color) 0 calc(var(--border-width) * 2),
