@@ -96,12 +96,11 @@ const Example: React.FC<{ texture: { pattern: string, theme?: string } }> = ({ t
   const [edit, setEdit] = useState<boolean>(false);
   const [theme, setTheme] = useState<string>(defaultTheme || '');
   return (
-    <ExampleBase css={pattern + theme} onClick={() => !edit && setEdit(true)}>
+    <ExampleBase css={pattern + theme} onMouseOver={() => !edit && setEdit(true)} onMouseLeave={() => setEdit(false)}>
       {
         edit ? (
           <>
             <ThemeEditor value={theme} onChange={e => { setTheme(e.target.value) }} />
-            <button onClick={() => setEdit(false) }>End edit</button>
             <button onClick={(e) => { window.confirm('リセット') && setTheme(defaultTheme || ''); e.preventDefault() } }>Reset</button>
           </>
         ) : null
