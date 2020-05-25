@@ -1,5 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import styled from 'styled-components';
+import { Form, Field, FormSpy } from 'react-final-form';
+import csstree from 'css-tree';
 import horizontalBorder from './textures/horizontalBorder';
 import verticalBorder from './textures/verticalBorder';
 import rightDiagonalLine from './textures/rightDiagonalLine';
@@ -41,27 +43,61 @@ import prism from './textures/prism';
 import weed from './textures/weed';
 import flowerBlock from './textures/flowerBlock';
 
-// import csstree from 'css-tree';
-// TODO: customize theme
-// const cssCustomProperties = (css: string) => {
-//   const properties = [] as string[]
-//   const ast = csstree.parse(css, { context: 'declarationList', parseCustomProperty: true })
-//   csstree.walk(ast, (props: any) => {
-//     console.log(props)
-//   })
-//   csstree.walk(ast, (node) => {
-//     if (node.type === 'Identifier') {
-//       const { name } = node;
-//       if (name.startsWith('--') && !properties.includes(name)) {
-//         properties.push(name)
-//       }
-//     }
-//   })
-//   return properties
-// }
+type CssCustomProperty = { property: string; value: string; cssValue: csstree.Value };
+type CssCustomProperties = Array<CssCustomProperty>;
 
-// const properties = cssCustomProperties(horizontalBorder.theme)
-// console.log(properties)
+const cssCustomPropertyDeclarations = (css: string) => {
+  const declarations: csstree.Declaration[] = [];
+  const ast = csstree.parse(css, { context: 'declarationList', parseValue: true, parseCustomProperty: true })
+  csstree.walk(ast, (node) => {
+    if (node.type === 'Declaration' && node.property.startsWith('--') && node.value.type === 'Value' && !declarations.find(({ property: p }) => p === node.property)) {
+      declarations.push(node);
+    }
+  })
+  return declarations
+}
+
+const cssCustomProperties = (css: string, elt: HTMLDivElement): CssCustomProperties => {
+  const declarations = cssCustomPropertyDeclarations(css);
+  const properties: CssCustomProperties = [];
+  const styles = getComputedStyle(elt);
+  declarations.forEach(({ property }) => {
+    const value = styles.getPropertyValue(property);
+    const ast = csstree.parse(value, { context: 'value' });
+      csstree.walk(ast, cssValue => {
+        if (cssValue.type === 'Value') {
+          properties.push({ property, value, cssValue });
+        }
+      })
+  })
+  return properties;
+}
+
+const generateTheme = (properties: CssCustomProperties, values: { [property: string]: string | undefined }) => {
+  return Object.keys(values).map(property => {
+    const cssProperty = properties.find(({ property: p }) => p === property);
+    if (!cssProperty) return '';
+
+    const newValue = values[property];
+    if (!newValue) return '';
+
+    const { cssValue } = cssProperty;
+    const head = cssValue.children.first();
+    switch (head?.type) {
+      case 'Dimension':
+        return `${property}: ${newValue}${head.unit};`;
+      case 'HexColor':
+        if (head.value.length === 8) {
+          const alpha = values[`__alpha__${property}`] ?? '';
+          const alphaHex = (+alpha).toString(16);
+          return `${property}: ${newValue + alphaHex};`;
+        } else {
+          return `${property}: ${newValue};`;
+        }
+    }
+    return `${property}: ${newValue};`;
+  }).join("\n");
+}
 
 const defaultTheme = `
 --sqrt2: 1.41421356237;
@@ -86,11 +122,70 @@ const ExampleBase = styled.div<{ css?: string }>`
   ${ ({ css }) => css }
 `;
 
-const ThemeEditor = styled.textarea`
-  width: 100%;
+const ThemeEditorBase = styled.div`
+  overflow: auto;
   font-size: xx-large;
-  height: calc(100% - 40px);
+  height: 100%;
+  background: #66666666;
 `;
+
+const CssValueField: React.FC<CssCustomProperty> = ({ property, value, cssValue }) => {
+  const head = cssValue.children.first();
+  switch (head?.type) {
+    case 'Dimension':
+      return <Field name={property} component="input" type="range" initialValue={head.value} min="0" max={2 * +head.value} />
+    case 'HexColor':
+      if (head.value.length === 8) {
+        const alpha = parseInt(head.value.substr(6, 2), 16);
+        return <>
+          <Field name={property} component="input" type="color" initialValue={`#${head.value.substr(0, 6)}`} />
+          <Field name={`__alpha__${property}`} component="input" type="range" initialValue={alpha} min="0" max="255" />
+        </>
+      } else {
+        return <Field name={property} component="input" type="color" initialValue={`#${head.value}`} />
+      }
+    default:
+      return (
+        <Field name={property} component="input" type="text" initialValue={value} />
+      )
+  }
+}
+
+const ThemeEditor: React.FC<{theme: string; onResetTheme: () => void; onChangeTheme: (theme: string) => void}> = ({ theme, onResetTheme, onChangeTheme }) => {
+  const [properties, setProperties] = useState<CssCustomProperties>([]);
+  const editorRef = useRef<HTMLDivElement>(null);
+  const originalTheme = useRef<string>('');
+  useEffect(() => { originalTheme.current = theme });
+  useEffect(() => {
+    if (!editorRef.current) return;
+
+    setProperties(cssCustomProperties(originalTheme.current, editorRef.current));
+  }, [originalTheme, editorRef])
+  return (
+    <ThemeEditorBase ref={editorRef}>
+      <Form onSubmit={async () => { }} render={({ handleSubmit }) => (
+        <>
+          <form onSubmit={handleSubmit}>
+            {properties.map(({ property, value, cssValue }) => (<div key={property}>
+              <label>{property}</label><br/>
+              <CssValueField property={property} value={value} cssValue={cssValue} />
+            </div>))}
+            <button onClick={(e) => { onResetTheme();  e.preventDefault() } }>Reset</button>
+          </form>
+          <FormSpy
+            subscription={{ values: true, pristine: true }}
+            onChange={({ values, pristine }) => {
+              if (!editorRef.current) return;
+              if (pristine) return;
+              const newTheme = generateTheme(properties, values);
+              onChangeTheme(newTheme);
+            }}
+          />
+        </>
+      )} />
+    </ThemeEditorBase>
+  )
+}
 
 const Example: React.FC<{ texture: { pattern: string, theme?: string } }> = ({ texture: { pattern, theme: defaultTheme } }) => {
   const [edit, setEdit] = useState<boolean>(false);
@@ -100,8 +195,7 @@ const Example: React.FC<{ texture: { pattern: string, theme?: string } }> = ({ t
       {
         edit ? (
           <>
-            <ThemeEditor value={theme} onChange={e => { setTheme(e.target.value) }} />
-            <button onClick={(e) => { window.confirm('リセット') && setTheme(defaultTheme || ''); e.preventDefault() } }>Reset</button>
+            <ThemeEditor theme={theme} onResetTheme={() => window.confirm('リセット') && setTheme(defaultTheme || '')} onChangeTheme={newTheme => { setTheme(newTheme) }} />
           </>
         ) : null
       }
