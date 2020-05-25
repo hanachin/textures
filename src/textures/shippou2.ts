@@ -3,11 +3,9 @@ const theme = `
 --circle-width: 2px;
 --circle-distance: 48px;
 --fill-color: #ff000066;
---blend-mode: overlay;
 `;
 
 const pattern = `
-mix-blend-mode: var(--blend-mode);
 background: 0 0 / var(--circle-distance) var(--circle-distance)
             radial-gradient(
               var(--fill-color) 0 calc(var(--circle-size) - var(--circle-width)),
